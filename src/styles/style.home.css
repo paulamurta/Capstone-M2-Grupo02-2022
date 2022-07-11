@@ -1,88 +1,169 @@
-body{
-    font-family: var(--font-inter);
+.header {
+	max-width: 988px;
+	margin: 0 15px;
+	margin-bottom: 58px;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+@media (min-width: 1024px) {
+	.header {
+		margin: 0 auto;
+		margin-bottom: 25px;
+	}
 }
 
-.filters{
-    width: 61.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header__top {
+	height: 58px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.containerButtons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
+.header__logo {
+	font-size: 1.375rem;
+	color: var(--color-blue);
+}
+.header__top::before {
+	background-color: var(--color-gray-6);
+	width: 100vw;
+	height: 58px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	content: "";
 }
 
-.button{
-    cursor: pointer;
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 5px;
-    font-family: var(--font-inter);
+.header-top__img {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: 2px solid var(--color-blue);
 }
 
-.button__add{
-    background-color: var(--color-dark-blue);
-    color: var(--color-gray-6);
+.header__bottom {
+	height: 125px;
+	display: flex;
+	justify-content: flex-start;
 }
 
-.habits{
-    width: 61.75rem;
+.header__bottom::before {
+	background-color: var(--color-blue);
+	position: absolute;
+	content: "";
+	top: 58px;
+	left: 0;
+	z-index: -1;
+	height: 125px;
+	width: 100vw;
 }
 
-.habits__header{
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--color-gray-7);
+.header-bottom__figure {
+	padding-top: 16px;
+	padding-right: 23px;
 }
 
-.habits__checkbox:checked{
+@media (min-width: 768px) {
+	.header-bottom__figure {
+		padding-top: 0;
+		align-self: center;
+	}
 }
 
-.habits__title{
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-gray-1);
+.header-bottom__img {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	border: 2px solid var(--color-white);
 }
 
-.habits__description{
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-gray-1);
+.header__username {
+	font-size: 1.25rem;
+	color: var(--color-white);
+	padding-top: 33px;
 }
 
-.habits__category{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    width: 100px;
-    height: 1.5rem;
-    background-color: var(--color-ligth-blue);
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-blue);
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
 }
 
-.button__next{
-    background-color: var(--color-dark-blue);
-    color: var(--color-gray-6);
+.filters {
+	width: 61.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
+
+.containerButtons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2px;
+}
+
+.button {
+	cursor: pointer;
+	background: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	border: none;
+	padding: 12px 28px;
+	border-radius: 5px;
+	font-family: var(--font-inter);
+}
+
+.button__add {
+	background-color: var(--color-dark-blue);
+	color: var(--color-gray-6);
+}
+
+.habits {
+	width: 61.75rem;
+}
+
+.habits__header {
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--color-gray-7);
+}
+
+.habits__checkbox:checked {
+}
+
+.habits__title {
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--color-gray-1);
+}
+
+.habits__description {
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--color-gray-1);
+}
+
+.habits__category {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--color-black);
+	width: 100px;
+	height: 1.5rem;
+	background-color: var(--color-ligth-blue);
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--color-blue);
+}
+
+.button__next {
+	background-color: var(--color-dark-blue);
+	color: var(--color-gray-6);
+}
+
