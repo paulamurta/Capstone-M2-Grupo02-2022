@@ -1,0 +1,81 @@
+.header {
+	max-width: 988px;
+	margin: 0 15px;
+}
+
+@media (min-width: 1024px) {
+	.header {
+		margin: 0 auto;
+	}
+}
+
+.header__top {
+	height: 58px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__logo {
+	font-size: 1.375rem;
+	color: var(--color-blue);
+}
+.header__top::before {
+	background-color: var(--color-gray-6);
+	width: 100vw;
+	height: 58px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	content: "";
+}
+
+.header-top__img {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: 2px solid var(--color-blue);
+}
+
+.header__bottom {
+	height: 125px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.header__bottom::before {
+	background-color: var(--color-blue);
+	position: absolute;
+	content: "";
+	top: 58px;
+	left: 0;
+	z-index: -1;
+	height: 125px;
+	width: 100vw;
+}
+
+.header-bottom__figure {
+	padding-top: 16px;
+	padding-right: 23px;
+}
+
+@media (min-width: 768px) {
+	.header-bottom__figure {
+		padding-top: 0;
+		align-self: center;
+	}
+}
+
+.header-bottom__img {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	border: 2px solid var(--color-white);
+}
+
+.header__username {
+	font-size: 1.25rem;
+	color: var(--color-white);
+	padding-top: 33px;
+}
