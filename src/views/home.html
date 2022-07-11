@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.home.css">
+    <link rel="stylesheet" href="../styles/base.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Homepage</title>
+</head>
+<body>
+
+    <main>
+        <section class="filters">
+            <h3>Tarefas</h3>
+            <div class="containerButtons">
+                <button class="button button__filter">Todos</button>
+                <button class="button button__filter">Concluidos</button>
+                <button class="button button__add">Criar</button>
+            </div>
+        </section>
+    
+        <table class="habits">
+    
+            <thead class="habits__header">
+                <tr>
+                    <th>Status</th>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+    
+            <tbody class="habits__body">
+                <tr>
+                    <td><input type="checkbox" class="habits__checkbox"></td>
+                    <td><h3 class="habits__title">Lorem ipsum dolor sit.</h3></td>
+                    <td><p class="habits__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore, unde!</p></td>
+                    <td><span class="habits__category">Lorem.</span></td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="habits__checkbox"></td>
+                    <td><h3 class="habits__title">Lorem ipsum dolor sit.</h3></td>
+                    <td><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore, unde!</p></td>
+                    <td><span class="habits__category">Lorem.</span></td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="habits__checkbox"></td>
+                    <td><h3 class="habits__title">Lorem ipsum dolor sit.</h3></td>
+                    <td><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore, unde!</p></td>
+                    <td><span class="habits__category">Lorem.</span></td>
+                    <td>...</td>
+                </tr>
+            </tbody>
+    
+        </table>
+
+        <button class="button button__next">Carregar mais</button>
+
+    </main>
+
+    
+</body>
+</html>
