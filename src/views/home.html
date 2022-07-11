@@ -38,5 +38,68 @@
 				<h3 class="header__username">Nome teste user</h3>
 			</div>
 		</header>
+		<main>
+			<section class="filters">
+				<h3>Tarefas</h3>
+				<div class="containerButtons">
+					<button class="button button__filter">Todos</button>
+					<button class="button button__filter">Concluidos</button>
+					<button class="button button__add">Criar</button>
+				</div>
+			</section>
+
+			<table class="habits">
+				<thead class="habits__header">
+					<tr>
+						<th>Status</th>
+						<th>Título</th>
+						<th>Descrição</th>
+						<th>Categoria</th>
+						<th>Editar</th>
+					</tr>
+				</thead>
+
+				<tbody class="habits__body">
+					<tr>
+						<td><input type="checkbox" class="habits__checkbox" /></td>
+						<td><h3 class="habits__title">Lorem ipsum dolor sit.</h3></td>
+						<td>
+							<p class="habits__description">
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Labore, unde!
+							</p>
+						</td>
+						<td><span class="habits__category">Lorem.</span></td>
+						<td>...</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" class="habits__checkbox" /></td>
+						<td><h3 class="habits__title">Lorem ipsum dolor sit.</h3></td>
+						<td>
+							<p>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Labore, unde!
+							</p>
+						</td>
+						<td><span class="habits__category">Lorem.</span></td>
+						<td>...</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" class="habits__checkbox" /></td>
+						<td><h3 class="habits__title">Lorem ipsum dolor sit.</h3></td>
+						<td>
+							<p>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Labore, unde!
+							</p>
+						</td>
+						<td><span class="habits__category">Lorem.</span></td>
+						<td>...</td>
+					</tr>
+				</tbody>
+			</table>
+			<button class="button button__next">Carregar mais</button>
+		</main>
 	</body>
 </html>
+
