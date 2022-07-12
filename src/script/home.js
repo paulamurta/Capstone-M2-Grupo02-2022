@@ -11,6 +11,20 @@ Api.login({
 	password: "8ad51ba84da177f2de190940dda6c9bc",
 });
 
+
+/* const objetoLogin = {
+    email: "grupo2RafaelK@mail.com",	
+    password: "8ad51ba84da177f2de190940dda6c9bc"
+    }
+
+Api.login(objetoLogin) 
+
+console.log(await Api.readAllHabits())
+FilterHabits.createFilters(await Api.readAllHabits());
+TableHabit.listHabit(await Api.readAllHabits());
+
+const newPost = {
+
 FilterHabits.createFilters(await Api.readAllHabits());
 TableHabit.listHabit(await Api.readAllHabits());
 
@@ -19,10 +33,13 @@ TableHabit.listHabit(await Api.readAllHabits());
 
 // teste.addEventListener("click", EditModalHabit.createModal);
 /* const newPost = {
+
     habit_title: "Fazer Caminhada",
     habit_description: "Exercícios físicos te ajudam a relaxar",
     habit_category: "saude"
 }
 
-let testePost = await Api.createHabit(newPost); */
+let testePost = await Api.createHabit(newPost); 
 // console.log(testePost);
+
+*/
