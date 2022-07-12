@@ -19,6 +19,9 @@ export default class Login {
 				.then((res) => {
 					if (res.token) {
 						ModalRequest.modalSucess("O usuário foi logado");
+						setTimeout(() => {
+							window.location.href = "./src/views/home.html";
+						}, 2000);
 					} else {
 						let message = res.message;
 						ModalRequest.modalError(message.charAt(message.length-1) === "." ? message.charAt(0).toUpperCase() + message.slice(1) : message.charAt(0).toUpperCase() + message.slice(1)  + ".");
