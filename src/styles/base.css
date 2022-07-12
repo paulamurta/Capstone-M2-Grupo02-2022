@@ -23,5 +23,38 @@
 
 	--color-white: #ffffff;
 	--color-black: #000000;
-	--color-light-pink: #EBEBEB;
+	--color-light-pink: #ebebeb;
+}
+.modal-sucess {
+	background: var(--color-success-background);
+	border: 2px solid var(--color-green);
+}
+
+.modal-error {
+	background: var(--color-error-background);
+	border: 2px solid var(--color-red-1);
+}
+
+.modal i {
+	align-self: center;
+	font-size: 50px;
+	color: var(--color-success);
+}
+
+.modal-error i {
+	color: var(--color-red-1);
+}
+
+.modal main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+}
+
+@media (min-width: 750px) {
+	.modal {
+		right: 50px;
+		bottom: 25px;
+	}
 }

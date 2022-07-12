@@ -1,9 +1,9 @@
 class Api {
 	static baseUrl = "https://habits-kenzie.herokuapp.com/api";
-	static token = JSON.parse(localStorage.getItem("@habits-kenzie:token"));
+	static token = localStorage.getItem("@habits-kenzie:token");
 	static headers = {
 		"Content-Type": "application/json",
-		Authorization: `Bearer ${this.token}`,
+		Authorization: `Bearer ${JSON.parse(this.token)}`,
 	};
 
 	// Requisição de Login
