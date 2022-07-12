@@ -1,4 +1,4 @@
-import { Api } from "./api.controllers.js";
+import Api from "../controllers/api.controllers.js";
 
 class Header {
 	static async headerInfoUser() {
