@@ -12,6 +12,10 @@ Api.login({
 FilterHabits.createFilters(await Api.readAllHabits());
 TableHabit.listHabit(await Api.readAllHabits());
 
+//! Deletar depois
+const teste = document.querySelector(".button__add");
+
+teste.addEventListener("click", EditModalHabit.createModal);
 /* const newPost = {
     habit_title: "Fazer Caminhada",
     habit_description: "Exercícios físicos te ajudam a relaxar",

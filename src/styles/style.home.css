@@ -180,3 +180,137 @@ main {
 	background-color: var(--color-dark-blue);
 	color: var(--color-gray-6);
 }
+
+/* ! Estilização dos modais */
+
+.edit-modal {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vw;
+}
+
+.modal__button-close {
+	position: relative;
+	float: right;
+	top: 32px;
+	right: 32px;
+	color: var(--color-gray-7);
+}
+.edit-modal__content {
+	min-width: 305px;
+	max-width: 502px;
+	margin: 0 10px;
+	margin-top: 29px;
+	background-color: var(--color-white);
+	border-radius: 8px;
+	height: 480px;
+}
+@media (min-width: 768px) {
+	.edit-modal__content {
+		margin: 29px auto;
+	}
+}
+
+.edit-modal__form {
+	padding: 32px;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-areas:
+		"title title"
+		"label-name label-name"
+		"input-name input-name"
+		"label-description label-description"
+		"input-description input-description"
+		"label-category label-category"
+		"select-category select-category"
+		"label-status input-status"
+		"button-save button-save"
+		"button-delete button-delete";
+}
+
+.edit-modal__input {
+	min-width: 277px;
+	height: 40px;
+	background-color: var(--color-gray-5);
+}
+
+.edit-modal__title {
+	grid-area: title;
+	color: var(--color-gray-1);
+	font-size: 1.25rem;
+}
+
+.edit-modal__label {
+	padding-bottom: 8px;
+	padding-top: 28px;
+	font-size: 0.875rem;
+}
+
+.edit-modal__select {
+	min-width: 277px;
+	height: 40px;
+	background-color: var(--color-gray-5);
+	padding: 8px;
+	text-decoration: none;
+	appearance: none;
+}
+
+.label__name {
+	grid-area: label-name;
+}
+
+.input__name {
+	grid-area: input-name;
+}
+
+.label__description {
+	grid-area: label-description;
+}
+
+.input__description {
+	grid-area: input-description;
+	height: 80px;
+}
+
+.label__category {
+	grid-area: label-category;
+}
+
+.select__category {
+	grid-area: select-category;
+}
+
+.label__status {
+	grid-area: label-status;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.input__status {
+	grid-area: input-status;
+	justify-self: end;
+}
+
+.button__save-changes {
+	grid-area: button-save;
+}
+
+.button__delete-changes {
+	grid-area: button-delete;
+}
+
+.edit-modal__input--description {
+	height: 80px;
+}
+
+.edit-modal__check {
+}
+
+.modal__button {
+}
+
+.button__save-changes {
+}
