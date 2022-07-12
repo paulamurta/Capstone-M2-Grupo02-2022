@@ -2,6 +2,8 @@ import Api from "../controllers/api.controllers.js";
 import FilterHabits from "../controllers/filter-habits.controllers.js";
 import TableHabit from "../controllers/table-habits.controllers.js";
 import Header from "../controllers/header.controllers.js";
+import EditModalHabit from "../controllers/modal-edit-habit.controllers.js";
+
 Header.headerInfoUser();
 //! Login para carregar a página, apagar depois
 Api.login({
@@ -12,10 +14,10 @@ Api.login({
 FilterHabits.createFilters(await Api.readAllHabits());
 TableHabit.listHabit(await Api.readAllHabits());
 
-//! Deletar depois
-const teste = document.querySelector(".button__add");
+//! Deletar depois => Só para ver o modal edit.
+// const teste = document.querySelector(".button__add");
 
-teste.addEventListener("click", EditModalHabit.createModal);
+// teste.addEventListener("click", EditModalHabit.createModal);
 /* const newPost = {
     habit_title: "Fazer Caminhada",
     habit_description: "Exercícios físicos te ajudam a relaxar",
