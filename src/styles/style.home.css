@@ -312,3 +312,10 @@ main {
 		align-self: center;
 	}
 }
+
+/* Teste */
+
+.line__checked{
+	background-color: var(--color-light-pink);
+	border-bottom: 1px solid var(--color-gray-4);
+}
