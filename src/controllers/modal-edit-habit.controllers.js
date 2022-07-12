@@ -1,3 +1,4 @@
+//! Ainda preciso terminar de fazer a requisição e entender esse css.
 class EditModalHabit {
 	static createModal() {
 		const body = document.querySelector("body");
@@ -154,4 +155,4 @@ class EditModalHabit {
 	}
 }
 
-export { EditModalHabit };
+export default EditModalHabit;

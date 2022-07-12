@@ -1,5 +1,5 @@
 import Api from "./api.controllers.js";
-
+import EditModalHabit from "./modal-edit-habit.controllers.js";
 export default class TableHabit {
 	static async listHabit(habitsData) {
 		const table = document.querySelector(".habits__body");
@@ -50,8 +50,9 @@ export default class TableHabit {
 			button.classList.add("button");
 			button.classList.add("button__editHabit");
 			button.innerText = ". . .";
-			button.addEventListener("click", () => {
-				console.log("Cliquei");
+			button.addEventListener("click", (event) => {
+				console.log(event);
+				EditModalHabit.createModal();
 				//vai chamar o modal de editar habit
 			});
 
