@@ -1,26 +1,7 @@
+import Api from "./api.controllers.js";
+import ModalRequest from "../controllers/modal-requests.controllers.js";
 export default class Login {
 	static baseUrl = "https://habits-kenzie.herokuapp.com/api/userLogin";
-
-	static async userLogin(userData) {
-		await fetch(this.baseUrl, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(userData),
-		})
-			.then((response) => response.json())
-			.then((response) => {
-				console.log(response);
-
-				if (response.message === undefined) {
-					localStorage.setItem("@kenzie-habits:username", response.response.usr_name);
-					localStorage.setItem("@kenzie-habits:token", response.token);
-					window.location.href = "./src/views/home.html";
-				}
-			})
-			.catch((error) => console.log(error));
-	}
 
 	static formSubmit() {
 		const form = document.querySelector("#formLogin");
@@ -34,7 +15,15 @@ export default class Login {
 				password: userData.get("password"),
 			};
 
-			await this.userLogin(userData);
+			await Api.login(userData)
+				.then((res) => {
+					if (res.token) {
+						ModalRequest.modalSucess("O usuário foi logado");
+					} else {
+						let message = res.message;
+						ModalRequest.modalError(message.charAt(message.length-1) === "." ? message.charAt(0).toUpperCase() + message.slice(1) : message.charAt(0).toUpperCase() + message.slice(1)  + ".");
+					}
+				});
 		});
 	}
 

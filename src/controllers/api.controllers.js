@@ -1,6 +1,6 @@
 class Api {
     static baseUrl = "https://habits-kenzie.herokuapp.com/api"
-    static token = JSON.parse(localStorage.getItem("@habits-kenzie:token"))
+    static token = localStorage.getItem("@habits-kenzie:token")
     static headers = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${this.token}`
@@ -16,10 +16,10 @@ class Api {
             body: JSON.stringify(loginData)
         })
         .then(res => res.json())
-        .then(res => {
-            localStorage.setItem("@habits-kenzie:user", JSON.stringify(res.response))
-            localStorage.setItem("@habits-kenzie:token", JSON.stringify(res.token))
-            return res
+            .then(res => {
+                localStorage.setItem("@habits-kenzie:user", JSON.stringify(res.response))
+                localStorage.setItem("@habits-kenzie:token", JSON.stringify(res.token))
+                return res
         })
         .catch(err => console.log(err))
     }
