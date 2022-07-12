@@ -162,6 +162,10 @@ main {
 	color: var(--color-blue);
 }
 
+.button__editHabit{
+	
+}
+
 .button__next {
 	background-color: var(--color-dark-blue);
 	color: var(--color-gray-6);
