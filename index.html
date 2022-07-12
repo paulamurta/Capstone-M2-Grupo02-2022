@@ -10,9 +10,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600&display=swap"
 		rel="stylesheet">
-	<link rel="stylesheet" href="./src/styles/reset.css" />
-	<link rel="stylesheet" href="./src/styles/base.css">
-	<link rel="stylesheet" href="./src/styles/style.index.css" />
+		<link rel="stylesheet" href="./src/styles/reset.css" />
+		<link rel="stylesheet" href="./src/styles/base.css">
+		<link rel="stylesheet" href="./src/styles/style.index.css"/>
+		<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -32,13 +33,15 @@
 			<form action="" id="formLogin">
 				<h2>Login</h2>
 				<label for="email">E-mail:</label>
-				<input type="email" name="email" placeholder="Digite seu e-mail" required>
+				<input type="email" name="email" placeholder="Digite seu e-mail">
+				<p class="error-message">E-mail inválido.</p>
 				<label for="password">Senha:</label>
-				<input type="password" name="password" placeholder="Digite sua senha" required>
+				<input type="password" name="password" placeholder="Digite sua senha">
 				<button type="submit" title="Login">Entrar</button>
 			</form>
 		</section>
 	</main>
+	
 	<script type="module" src="./src/script/index.js"></script>
 </body>
 
