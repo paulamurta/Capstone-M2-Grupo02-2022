@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+    height: 100vh;
+    font-family: var(--font-inter);
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+}
+
+.container__welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background: var(--color-dark-blue);
+    margin-left: 50px;
+    box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+    border-radius: 8px 0 0 8px;
+}
+
+.container__welcome article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+    font-family: var(--font-inter);
+    color: var(--color-white);
+}
+
+.container__welcome h1 {
+    font-family: var(--font-poppins);
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.container__welcome p {
+    font-size: 20px;
+}
+
+.container__welcome span {
+    color: var(--color-gray-4);
+}
+
+.container__welcome a {
+    text-decoration: underline;
+}
+
+.container__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background: var(--color-white);
+    box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+    border-radius: 0 8px 8px 0;
+    margin-right: 50px;
+}
+
+.container__login form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+}
+
+.container__login form h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.container__login form label {
+    color: var(--color-gray-2);
+}
+
+.container__login form input {
+    width: 100%;
+    height: 50px;
+    background: var(--color-gray-5);
+    border: 2px solid var(--color-gray-5);
+    padding: 9px 18px;
+    border-radius: 4px;
+}
+
+.container__login form input:focus {
+    border: 2px solid var(--color-blue);
+
+}
+
+.container__login form h2 {
+    margin-bottom: 20px;
+}
+
+.container__login form button {
+    width: 100%;
+    height: 40px;
+    background: var(--color-blue);
+    border: 2px solid var(--color-blue);
+    border-radius: 4px;
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--color-white);
+    cursor: pointer;
+}
