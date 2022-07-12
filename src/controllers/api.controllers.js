@@ -26,79 +26,79 @@ class Api {
         .catch(err => console.log(err))
     }
 
-    // Requisição de User
-    static async updateProfile(content){
-        return await fetch(`${this.baseUrl}/user/profile`, {
-            method: "PATCH",
-            headers: this.headers,
-            body: JSON.stringify(content)
-        })
-        .then(res => res.json())  
-        .then(res => res)
-        .catch(err => console.log(err))
-    }
+	// Requisição de User
+	static async updateProfile(content) {
+		return await fetch(`${this.baseUrl}/user/profile`, {
+			method: "PATCH",
+			headers: this.headers,
+			body: JSON.stringify(content),
+		})
+			.then((res) => res.json())
+			.then((res) => res)
+			.catch((err) => console.log(err));
+	}
 
-    // Requisições de Habits 
-    static async createHabit(habit){
-        return await fetch(`${this.baseUrl}/habits`, {
-            method: "POST",
-            headers: this.headers,
-            body: JSON.stringify(habit)
-        })
-        .then(res => res.json())  
-        .then(res => res)
-        .catch(err => console.log(err))
-    }
+	// Requisições de Habits
+	static async createHabit(habit) {
+		return await fetch(`${this.baseUrl}/habits`, {
+			method: "POST",
+			headers: this.headers,
+			body: JSON.stringify(habit),
+		})
+			.then((res) => res.json())
+			.then((res) => res)
+			.catch((err) => console.log(err));
+	}
 
-    static async readAllHabits(){
-        return await fetch(`${this.baseUrl}/habits`, {
-            method: "GET",
-            headers: this.headers
-        })
-        .then(res => res.json())  
-        .then(res => res)
-        .catch(err => console.log(err))
-    }
+	static async readAllHabits() {
+		return await fetch(`${this.baseUrl}/habits`, {
+			method: "GET",
+			headers: this.headers,
+		})
+			.then((res) => res.json())
+			.then((res) => res)
+			.catch((err) => console.log(err));
+	}
 
-    static async readByCategory(category){
-        return await fetch(`${this.baseUrl}/habits/category/${category}`, {
-            method: "GET",
-            headers: this.headers
-        })
-        .then(res => res.json())  
-        .then(res => res)
-        .catch(err => console.log(err))
-    }
+	static async readByCategory(category) {
+		return await fetch(`${this.baseUrl}/habits/category/${category}`, {
+			method: "GET",
+			headers: this.headers,
+		})
+			.then((res) => res.json())
+			.then((res) => res)
+			.catch((err) => console.log(err));
+	}
 
-    static async updateHabit(idHabit, content){
-        return await fetch (`${this.baseUrl}/habits/${idHabit}`, {
-            method: "PATCH",
-            headers: this.headers,
-            body: JSON.stringify(content)
-        })
-        .then(res => res.json())  
-        .then(res => res)
-        .catch(err => console.log(err))
-    }
+	static async updateHabit(idHabit, content) {
+		return await fetch(`${this.baseUrl}/habits/${idHabit}`, {
+			method: "PATCH",
+			headers: this.headers,
+			body: JSON.stringify(content),
+		})
+			.then((res) => res.json())
+			.then((res) => res)
+			.catch((err) => console.log(err));
+	}
 
-    static async completeHabit(idHabit){
-        return await fetch(`${this.baseUrl}/habits/complete/${idHabit}`, {
-            method: "PATCH",
-            headers: this.headers
-        })
-        .then(res => res.json())  
-        .then(res => res)
-        .catch(err => console.log(err))
-    }
+	static async completeHabit(idHabit) {
+		return await fetch(`${this.baseUrl}/habits/complete/${idHabit}`, {
+			method: "PATCH",
+			headers: this.headers,
+		})
+			.then((res) => res.json())
+			.then((res) => res)
+			.catch((err) => console.log(err));
+	}
 
-    static async deleteHabit(idHabit){
-        return await fetch(`${this.baseUrl}/habits/${idHabit}`, {
-            method: "DELETE",
-            headers: this.headers
-        })
-        .then(res => res.json())  
-        .catch(err => console.log(err))
-    }
+	static async deleteHabit(idHabit) {
+		return await fetch(`${this.baseUrl}/habits/${idHabit}`, {
+			method: "DELETE",
+			headers: this.headers,
+		})
+			.then((res) => res.json())
+			.catch((err) => console.log(err));
+	}
 }
 
-export default Api
+export default Api;
