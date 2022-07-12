@@ -21,7 +21,6 @@ class EditModalHabit {
 
 		buttonClose.addEventListener("click", function (event) {
 			modalDiv.remove();
-			//Fechar modal
 		});
 
 		const form = EditModalHabit.createElementModal("form", "edit-modal__form");
@@ -68,7 +67,7 @@ class EditModalHabit {
 		);
 
 		const options = [
-			["Casa", "../assets/user.png"],
+			["Casa", "fa-solid fa-user"],
 			["Estudo", "../assets/study.png"],
 			["Lazer", "../assets/hobby.png"],
 			["Trabalho", "../assets/work.png"],
@@ -81,11 +80,6 @@ class EditModalHabit {
 				"edit-modal__option",
 				option[0]
 			);
-			optionElement.value = option[0];
-
-			const icon = document.createElement("img");
-			icon.src = option[1];
-			optionElement.appendChild(icon);
 
 			categorySelect.append(optionElement);
 		});
