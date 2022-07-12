@@ -1,10 +1,14 @@
-import Api from "../controllers/api.controllers.js";
+import Api from "./api.controllers.js";
 
 class Header {
 	static async headerInfoUser() {
 		//! Ver nome da variável salva no storage; pode ter sido salva de maneira diferente
-		const userName = localStorage.getItem("@kenzie-habits:user_name");
-		const userImage = localStorage.getItem("@kenzie-habits:user_image");
+		const userName = JSON.parse(
+			localStorage.getItem("@habits-kenzie:user")
+		).usr_name;
+		const userImage = JSON.parse(
+			localStorage.getItem("@habits-kenzie:user")
+		).usr_image;
 
 		const imgHeaderTop = document.querySelector(".header-top__img");
 		imgHeaderTop.src = userImage;
@@ -16,4 +20,4 @@ class Header {
 	}
 }
 
-export { Header };
+export default Header;
