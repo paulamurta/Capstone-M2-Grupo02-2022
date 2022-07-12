@@ -1,0 +1,26 @@
+:root {
+	--color-blue: #415af3;
+	--color-dark-blue: #4150d2;
+	--color-light-blue: #d7e4fb;
+
+	--color-purple: #9747ff;
+	--color-light-purple: #a0adf9; /* Não tá listada, mas aparece como background de alguns botões de modal */
+
+	--color-gray-1: #212529;
+	--color-gray-2: #343a40;
+	--color-gray-3: #adb5bd;
+	--color-gray-4: #e9ecef;
+	--color-gray-5: #f1f3f5;
+	--color-gray-6: #f8f9fa;
+	--color-gray-7: #a1a1a1; /* Não tá listado, mas aparece em alguns títulos */
+
+	--color-green: #56cf8e;
+	--color-light-green: #e6f8ee; /* Não tá listada, mas aparece como background do modal de sucesso de criação de hábito */
+
+	--color-red-1: #e64445;
+	--color-red-2: #f03839;
+	--font-inter: "Inter", sans-serif;
+
+	--color-white: #ffffff;
+	--color-black: #000000;
+}
