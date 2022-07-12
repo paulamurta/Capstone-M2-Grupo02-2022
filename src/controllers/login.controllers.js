@@ -3,7 +3,6 @@ import ModalRequest from "../controllers/modal-requests.controllers.js";
 export default class Login {
 	static formSubmit() {
 		const form = document.querySelector("#formLogin");
-		console.log(form);
 		form.addEventListener("submit", async (event) => {
 			event.preventDefault();
 			let userData = new FormData(form);
@@ -13,7 +12,6 @@ export default class Login {
 			};
 
 			const result = await Api.login(userData);
-			console.log(result);
 			if (result.token) {
 				ModalRequest.modalSucess("O usuário foi logado");
 				setTimeout(() => {

@@ -20,11 +20,34 @@
 	--color-red-1: #e64445;
 	--color-red-2: #f03839;
 	--font-inter: "Inter", sans-serif;
+	--font-poppins: "Poppins";
 
 	--color-white: #ffffff;
 	--color-black: #000000;
+
+	--color-success: #17a057;
+	--color-success-background: #56cf8e96;
+	--color-error-background: #e6444481;
 	--color-light-pink: #ebebeb;
 }
+
+.modal {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	width: fit-content;
+	min-width: 290px;
+	height: 90px;
+	border: 1px solid black;
+	padding: 10px;
+	position: absolute;
+	bottom: 15px;
+	border-radius: 8px;
+	color: var(--color-gray-1);
+	transition: all 1s ease-in-out;
+	opacity: 0;
+}
+
 .modal-sucess {
 	background: var(--color-success-background);
 	border: 2px solid var(--color-green);
