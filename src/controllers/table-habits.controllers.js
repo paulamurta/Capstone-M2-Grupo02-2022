@@ -51,7 +51,7 @@ export default class TableHabit {
 			button.classList.add("button__editHabit");
 			button.innerText = ". . .";
 			button.addEventListener("click", (event) => {
-				EditModalHabit.createModal(habit.habit_id);
+				EditModalHabit.createModal(habit);
 				//vai chamar o modal de editar habit
 			});
 

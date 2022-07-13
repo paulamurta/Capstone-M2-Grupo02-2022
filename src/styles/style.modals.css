@@ -1,8 +1,14 @@
 /* ! Estilização dos modais */
+input,
+textarea {
+	padding: 10px;
+}
 
 .edit-modal {
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
+	display: flex;
+	justify-content: center;
 	top: 0;
 	left: 0;
 	width: 100vw;
@@ -16,18 +22,30 @@
 	right: 32px;
 	font-size: 1.25rem;
 	color: var(--color-gray-7);
+	cursor: pointer;
 }
+.modal-edit__button--close {
+	top: 12px;
+}
+@media (min-width: 720px) {
+	.modal-edit__button--close {
+		top: 32px;
+	}
+}
+
 .edit-modal__content {
 	min-width: 305px;
 	max-width: 502px;
-	margin: 29px 10px 0px 10px;
+	max-height: 520px;
+	margin-top: 29px;
 	background-color: var(--color-white);
 	border-radius: 8px;
-	height: 530px;
 }
 
 @media (min-width: 768px) {
 	.edit-modal__content {
+		width: 100%;
+		max-width: 502px;
 		margin: 29px auto;
 	}
 }
@@ -49,7 +67,19 @@
 		"button-delete button-delete";
 }
 
+.modal__button-delete {
+	grid-area: button-delete;
+	background-color: var(--color-gray-5);
+	justify-self: center;
+	width: 100%;
+}
+
 @media (min-width: 768px) {
+	.modal__button-delete {
+		max-width: 191px;
+		width: 191px;
+		margin-top: 25px;
+	}
 }
 
 .edit-modal__input {
@@ -134,6 +164,7 @@
 	height: 40px;
 	font-size: 1rem;
 	color: var(--color-gray-1);
+	cursor: pointer;
 }
 
 .button__save-changes {
@@ -152,7 +183,84 @@
 	justify-self: center;
 	width: 100%;
 }
-@media (min-width: 1024px) {
+
+.modal-delete__content {
+	min-width: 305px;
+	max-width: 502px;
+	margin-top: 29px;
+	background-color: var(--color-white);
+	border-radius: 8px;
+	padding: 3px 32px;
+	display: grid;
+	grid-template-areas: "titleDelete titleDelete" "subtitle subtitle" "textDelete textDelete" "delete delete" "cancel cancel";
+}
+
+.modal-delete {
+	width: 305px;
+	max-height: 360px;
+	margin-top: 29px;
+	background-color: var(--color-white);
+	border-radius: 8px;
+}
+
+.modal-delete__title {
+	grid-area: titleDelete;
+	font-size: 1.25rem;
+	padding-bottom: 64px;
+}
+
+.modal-delete__subtitle {
+	grid-area: subtitle;
+	font-size: 1.25rem;
+	padding-bottom: 13px;
+	width: 100%;
+	align-self: center;
+	justify-self: center;
+}
+
+.modal-delete__text {
+	grid-area: textDelete;
+	padding-bottom: 44px;
+}
+
+.button__delete-changes {
+	width: 100%;
+	background-color: var(--color-red-1);
+	font-size: 1 rem;
+	color: var(--color-gray-5);
+	font-weight: 600;
+	grid-area: delete;
+	margin-bottom: 14px;
+	height: 40px;
+	border-radius: 8px;
+}
+
+.modal__button-cancel {
+	grid-area: cancel;
+	background-color: var(--color-gray-5);
+	color: var(--color-gray-1);
+	font-weight: 600;
+	height: 40px;
+	border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+	.modal-delete {
+		width: 502px;
+		max-height: 330px;
+	}
+	.modal-delete__content {
+		grid-template-areas: "titleDelete titleDelete" "subtitle subtitle" "textDelete textDelete" "cancel delete";
+	}
+	.modal-delete__subtitle {
+		padding-bottom: 16px;
+	}
+	.modal-delete__text {
+		padding-bottom: 74px;
+	}
+	.modal__button-cancel {
+		width: 191px;
+	}
 	.edit-modal__form {
 		padding: 32px;
 		grid-template-areas:
@@ -167,12 +275,12 @@
 			"button-delete button-save";
 	}
 	.button__delete-changes {
-		max-width: 191px;
-		width: 191px;
+		max-width: 234px;
 	}
 	.button__save-changes {
 		max-width: 239px;
 		width: 239px;
 		margin-left: 8px;
+		margin-bottom: 0px;
 	}
 }

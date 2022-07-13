@@ -7,22 +7,29 @@ class DeleteModalHabit {
 		const modalDiv = EditModalHabit.createElementModal("div", "edit-modal");
 		body.append(modalDiv);
 
-		const modalContent = EditModalHabit.createElementModal(
+		const modalDelete = EditModalHabit.createElementModal(
 			"div",
-			"edit-modal__content"
+			"modal-delete"
 		);
-		modalDiv.append(modalContent);
 
 		const buttonClose = EditModalHabit.createElementModal(
 			"button",
 			"modal__button-close",
 			"X"
 		);
-		modalContent.append(buttonClose);
+		modalDelete.append(buttonClose);
 
 		buttonClose.addEventListener("click", function (event) {
 			modalDiv.remove();
 		});
+
+		const modalContent = EditModalHabit.createElementModal(
+			"div",
+			"modal-delete__content"
+		);
+
+		modalDelete.append(modalContent);
+		modalDiv.append(modalDelete);
 
 		const title = EditModalHabit.createElementModal(
 			"h3",
@@ -56,7 +63,7 @@ class DeleteModalHabit {
 
 		const buttonCancel = EditModalHabit.createElementModal(
 			"button",
-			"modal__button-cancel",
+			"modal__button-cancel modal__button",
 			"Cancelar"
 		);
 

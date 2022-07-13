@@ -3,7 +3,7 @@ import Api from "../controllers/api.controllers.js";
 import Habit from "../models/habit.model.js";
 import DeleteModalHabit from "./modal-delete-habit.controllers.js";
 class EditModalHabit {
-	static createModal(id) {
+	static createModal(habit) {
 		const body = document.querySelector("body");
 
 		const modalDiv = EditModalHabit.createElementModal("div", "edit-modal");
@@ -17,7 +17,7 @@ class EditModalHabit {
 
 		const buttonClose = EditModalHabit.createElementModal(
 			"button",
-			"modal__button-close",
+			"modal__button-close modal-edit__button--close",
 			"X"
 		);
 		modalContent.append(buttonClose);
@@ -50,6 +50,7 @@ class EditModalHabit {
 
 		labelName.setAttribute("for", "habitTitle");
 		inputName.id = "habitTitle";
+		inputName.value = habit.habit_title;
 
 		const labelDescription = EditModalHabit.createElementModal(
 			"label",
@@ -58,11 +59,11 @@ class EditModalHabit {
 		);
 
 		const inputDescription = EditModalHabit.createElementModal(
-			"input",
+			"textarea",
 			"edit-modal__input  input__description"
 		);
-		inputDescription.type = "text";
 		inputDescription.name = "habitDescription";
+		inputDescription.value = habit.habit_description;
 
 		const categoryLabel = EditModalHabit.createElementModal(
 			"label",
@@ -103,7 +104,10 @@ class EditModalHabit {
 		statusCheck.type = "checkbox";
 		statusCheck.name = "status";
 		statusCheck.id = "status";
-
+		if (habit.habit_status) {
+			statusCheck.setAttribute("checked", "true");
+			statusCheck.setAttribute("disabled", "true");
+		}
 		const buttonSave = EditModalHabit.createElementModal(
 			"button",
 			"modal__button button__save-changes",
@@ -119,7 +123,7 @@ class EditModalHabit {
 			const habitContent = new Habit(habitName, habitDescription, "saude");
 			const statusCheck = document.getElementsByName("status")[0].checked;
 
-			await Api.updateHabit(id, habitContent);
+			const res = await Api.updateHabit(habit.habit_id, habitContent);
 			if (statusCheck) await Api.completeHabit();
 
 			document.location.reload(true);
@@ -127,14 +131,14 @@ class EditModalHabit {
 
 		const buttonDelete = EditModalHabit.createElementModal(
 			"button",
-			"modal__button button__delete-changes",
+			"modal__button modal__button-delete",
 			"Excluir"
 		);
 		buttonDelete.addEventListener("click", async (event) => {
 			event.preventDefault();
 			const modalEdit = document.querySelector(".edit-modal");
 			if (modalEdit) modalEdit.remove();
-			DeleteModalHabit.createModal(id);
+			DeleteModalHabit.createModal(habit.habit_id);
 		});
 
 		form.append(
