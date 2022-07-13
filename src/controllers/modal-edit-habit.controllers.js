@@ -109,17 +109,30 @@ class EditModalHabit {
 			const habitName = document.getElementsByName("habitTitle")[0].value;
 			const habitDescription =
 				document.getElementsByName("habitDescription")[0].value;
-			const habitContent = new Habit(habitName, habitDescription, "saude");
+			const habitCategory =
+				document.getElementsByName("habit_category")[0].value;
+			console.log(habitCategory);
+			const habitContent = new Habit(
+				habitName,
+				habitDescription,
+				habitCategory
+			);
 			const statusCheck = document.getElementsByName("status")[0].checked;
 
 			const res = await Api.updateHabit(habit.habit_id, habitContent);
-			if (statusCheck) await Api.completeHabit();
+			if (statusCheck) await Api.completeHabit(habit.habit_id);
 
-			ModalRequest.modalSucess("Seu hábito foi alterado");
-
-			setTimeout(() => {
-				document.location.reload(true);
-			}, 1000);
+			if (
+				res.message ===
+				"categorias aceitas: saude, estudos, casa, trabalho e lazer"
+			) {
+				ModalRequest.modalError("Você deve selecionar alguma categoria");
+			} else {
+				ModalRequest.modalSucess("Seu hábito foi alterado");
+				setTimeout(() => {
+					document.location.reload(true);
+				}, 1000);
+			}
 		});
 
 		const buttonDelete = EditModalHabit.createElementModal(

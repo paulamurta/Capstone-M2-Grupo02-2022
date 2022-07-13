@@ -15,7 +15,8 @@ export default class Login {
 			if (result.token) {
 				ModalRequest.modalSucess("O usuário foi logado");
 				setTimeout(() => {
-					window.location.pathname = "../src/views/home.html";
+					// window.location.href += "/src/views/home.html" ;
+					console.log(window.location.href);
 				}, 1000);
 			} else {
 				let message = result.message;

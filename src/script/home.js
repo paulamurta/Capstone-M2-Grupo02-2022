@@ -3,7 +3,7 @@ import FilterHabits from "../controllers/filter-habits.controllers.js";
 import TableHabit from "../controllers/table-habits.controllers.js";
 import Header from "../controllers/header.controllers.js";
 import EditModalHabit from "../controllers/modal-edit-habit.controllers.js";
-import EditModalUser from "../controllers/modal-edit-user-controller.js"
+import EditModalUser from "../controllers/modal-edit-user-controller.js";
 
 Header.headerInfoUser();
 //! Login para carregar a página, apagar depois
@@ -15,7 +15,20 @@ Api.login({
 
 await Api.readAllHabits();
 FilterHabits.createFilters(await Api.readAllHabits());
-TableHabit.listHabit(await Api.readAllHabits());
+
+const data = await Api.readAllHabits();
+
+TableHabit.listHabit(await data);
+
+const buttonNext = document.querySelector(".button__next");
+buttonNext.addEventListener("click", () => {
+	data.length < TableHabit.postNumber
+		? (TableHabit.postNumber = data.length)
+		: (TableHabit.postNumber += 10);
+	TableHabit.listHabit(data);
+});
+
+TableHabit.verifyPostNumber < 10;
 
 //Apenas para teste
 //const testeUpdate = document.querySelector(".header-top__img")
@@ -25,13 +38,11 @@ TableHabit.listHabit(await Api.readAllHabits());
 //const teste = document.querySelector(".button__add");
 //teste.addEventListener("click", CreateModalHabit.createModal);
 
-
 //Api.deleteHabit(549);
 
 // teste.addEventListener("click", EditModalHabit.createModal);
 
 //=======Teste de novo Post
-
 
 /* const newPost = {
     habit_title: "Fazer o riscado na tarefa",
