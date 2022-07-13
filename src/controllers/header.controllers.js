@@ -2,7 +2,6 @@ import Api from "./api.controllers.js";
 
 class Header {
 	static async headerInfoUser() {
-		//! Ver nome da variável salva no storage; pode ter sido salva de maneira diferente
 		const userName = JSON.parse(
 			localStorage.getItem("@habits-kenzie:user")
 		).usr_name;
