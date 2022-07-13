@@ -1,6 +1,5 @@
 import Api from "./api.controllers.js";
 import ModalRequest from "../controllers/modal-requests.controllers.js";
-
 export default class Login {
 	static formSubmit() {
 		const form = document.querySelector("#formLogin");
