@@ -78,7 +78,28 @@ export default class CreateModalHabit {
 		);
 		btnSave.type = "submit";
 		btnSave.name = "submitBtn";
+		// btnSave.addEventListener("click", async (event) => {
+		// 	event.preventDefault();
+		// 	const response = await Api.createHabit(data);
+		// 	const formValues = [...event.target.form];
+		// 	const data = {};
 
+		// 	formValues.forEach((input) => {
+		// 		if (input.value != "") {
+		// 			data[input.name] = input.value;
+		// 		}
+		// 	});
+		// 	console.log(data.habit_category);
+		// 	data.habit_category = data.habit_category.toLowerCase().replace("ú", "u");
+		// 	response.message === "habit_category obrigatório"
+		// 		? setTimeout(() => {
+		// 				ModalRequest.modalError("Você deve selecionar alguma categoria");
+		// 		  }, 1000)
+		// 		: (window.location.reload(true),
+		// 		  setTimeout(() => {
+		// 				ModalRequest.modalSucess("Seu hábito foi alterado");
+		// 		  }, 1000));
+		// });
 		formCreate.append(
 			titleForm,
 			labelTitleForm,
@@ -235,10 +256,9 @@ export default class CreateModalHabit {
 
 		return divDropdown;
 	}
-	static async createNewHabit() {
+	static createNewHabit() {
 		const buttonInsert = document.querySelector(".modal__button");
 		buttonInsert.addEventListener("click", async (event) => {
-			const response = await Api.createHabit(data);
 			event.preventDefault();
 			const formValues = [...event.target.form];
 			const data = {};
@@ -248,16 +268,28 @@ export default class CreateModalHabit {
 					data[input.name] = input.value;
 				}
 			});
-			console.log(data.habit_category);
-			data.habit_category = data.habit_category.toLowerCase().replace("ú", "u");
-			response.message === "habit_category obrigatório"
-				? setTimeout(() => {
-						ModalRequest.modalError("Você deve selecionar alguma categoria");
-				  }, 1000)
-				: (window.location.reload(true),
-				  setTimeout(() => {
-						ModalRequest.modalSucess("Seu hábito foi alterado");
-				  }, 1000));
+			const modalCreate = document.querySelector(".create-modal");
+			const response = await Api.createHabit(data);
+
+			if (data.habit_category !== undefined) {
+				data.habit_category = data.habit_category
+					.toLowerCase()
+					.replace("ú", "u");
+			}
+
+			if (
+				response.message === "habit_category obrigatório" ||
+				response.message === "habit_title obrigatório" ||
+				response.message === "habit_description obrigatório"
+			) {
+				ModalRequest.modalError("Você deve informar todos os campos");
+			} else {
+				ModalRequest.modalSucess("Seu hábito foi criado");
+				modalCreate.remove();
+				setTimeout(() => {
+					window.location.reload(true);
+				}, 1200);
+			}
 		});
 	}
 }

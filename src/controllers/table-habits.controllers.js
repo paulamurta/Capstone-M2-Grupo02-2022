@@ -21,6 +21,7 @@ export default class TableHabit {
 			buttonNext.style.display = "block";
 		}
 
+		posts = posts > habit.length ? habit.length : posts;
 		for (let i = 0; i < posts; i++) {
 			const tr = document.createElement("tr");
 			tr.classList.add("habits__body__line");
