@@ -19,7 +19,10 @@
 	--color-light-green: #e6f8ee; /* Não tá listada, mas aparece como background do modal de sucesso de criação de hábito */
 
 	--color-red-1: #e64445;
+
 	--color-red-2: #f03839;
+	--color-red-3: #e07b7b;
+
 	--font-inter: "Inter", sans-serif;
 	--font-poppins: "Poppins";
 
@@ -38,7 +41,8 @@
 	gap: 15px;
 	width: fit-content;
 	min-width: 290px;
-	height: 90px;
+	height: 120px;
+	width: 420px;
 	border: 1px solid black;
 	padding: 10px;
 	position: absolute;
