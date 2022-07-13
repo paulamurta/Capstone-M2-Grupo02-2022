@@ -9,7 +9,6 @@ export default class TableHabit {
 			const tr = document.createElement("tr");
 			tr.classList.add("habits__body__line");
 
-
 			const td1 = document.createElement("td");
 			td1.classList.add("habits__checkbox");
 
@@ -18,7 +17,6 @@ export default class TableHabit {
 			if (habit.habit_status == true) {
 				checkbox.checked = true;
 				checkbox.disabled = "true";
-
 			}
 			checkbox.classList.add("habits__checkbox");
 
@@ -58,16 +56,9 @@ export default class TableHabit {
 			//td5.classList.add("button");
 			td5.classList.add("button__edit__habit");
 
-			// const button = document.createElement("button");
-			// button.innerText = ". . .";
-			// button.addEventListener("click", (event) => {
-			// EditModalHabit.createModal(habit);
-			//vai chamar o modal de editar habit
-			// });
-
 			const button = document.createElement("button");
 			button.innerText = "...";
-			button.classList.add("button");
+			// button.classList.add("button");
 			button.classList.add("button__editHabit");
 
 			button.addEventListener("click", (event) => {
@@ -77,8 +68,8 @@ export default class TableHabit {
 
 			td5.append(button);
 
-			if(checkbox.checked == true){
-				tr.style.backgroundColor = "#e9ecef"
+			if (checkbox.checked == true) {
+				tr.style.backgroundColor = "#e9ecef";
 				tr.classList.add("line__checked");
 			}
 			tr.append(td1, td2, td3, td4, td5);

@@ -274,7 +274,7 @@ main {
 	background-color: var(--color-light-blue);
 	border: none;
 	border-radius: 4px;
-		font-size: 0.875rem;
+	font-size: 0.875rem;
 	font-weight: 500;
 	color: var(--color-blue);
 }
@@ -316,16 +316,15 @@ main {
 }
 
 @media (min-width: 1024px) {
-	
 	.header {
-		margin-bottom: 3vh
+		margin-bottom: 3vh;
 	}
-	
+
 	.header__top {
 		max-width: 988px;
 		padding: 2vh 2vw;
 	}
-	
+
 	main {
 		width: 988px;
 		align-items: center;
@@ -337,18 +336,17 @@ main {
 		align-items: center;
 	}
 
-	
 	.filters h3 {
 		margin: 0;
 		padding-left: 0;
 	}
-	
+
 	.containerButtons {
 		justify-content: flex-end;
 		padding: 0;
 		gap: 2vw;
 	}
-	
+
 	.button {
 		padding: 6px 18px;
 	}
@@ -356,26 +354,26 @@ main {
 	.button__add {
 		padding: 6px 18px;
 	}
-	
+
 	.habits {
 		width: 988px;
 	}
-	
+
 	.habits__header {
 		width: 100%;
 		padding: 2vh 2vw 2vh 2vw;
 	}
-	
+
 	.header__category__status {
 		text-align: center;
 		padding: 0 2vw 0 0;
 	}
-	
+
 	.header__category__title {
 		flex: 5;
 		padding: 0;
 	}
-	
+
 	.header__category__description {
 		display: block;
 		flex: 4;
@@ -385,7 +383,7 @@ main {
 		color: var(--color-gray-7);
 		padding: 0;
 	}
-	
+
 	.header__category__category {
 		display: block;
 		flex: 2;
@@ -395,35 +393,35 @@ main {
 		color: var(--color-gray-7);
 		padding: 0;
 	}
-	
+
 	.header__category__edit {
 		text-align: center;
 		padding: 0 0 0 2vw;
 	}
-	
+
 	.habits__checkbox:checked {
 	}
-	
+
 	.habits__body {
 		justify-content: center;
 		align-items: center;
 	}
-	
+
 	.habits__body__line {
 		width: 100%;
 		justify-content: flex-start;
 		padding: 1vh 2vw 1vh 2vw;
 	}
-	
+
 	.habits__checkbox {
 		padding: 0 2vw 0 0;
 	}
-	
+
 	.habits__checkbox input {
 		/* descobre como manipula input*/
 		background-color: blueviolet;
 	}
-	
+
 	.habits__title {
 		flex: 5;
 		padding: 0;
@@ -435,8 +433,7 @@ main {
 		white-space: nowrap;
 		max-width: 230px;
 	}
-	
-	
+
 	.habits__description {
 		flex: 4;
 		display: flex;
@@ -451,7 +448,6 @@ main {
 		white-space: nowrap;
 		max-width: 230px;
 	}
-	
 
 	.habits__category {
 		flex: 2;
@@ -460,62 +456,59 @@ main {
 		align-items: center;
 		padding: 0;
 	}
-	
+
 	.habits__category span {
 		width: auto;
 		height: auto;
 		padding: 0.7vh;
 	}
-	
+
 	.button__edit__habit {
 		padding: 0 0 0 2vw;
 	}
-
-
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
 	.filters {
 		padding: 2vw;
 		flex-direction: row;
 		align-items: center;
 	}
-	
+
 	.filters h3 {
 		margin: 0;
 		padding-left: 0;
 	}
-	
+
 	.containerButtons {
 		justify-content: flex-end;
 		padding: 0;
 		gap: 2vw;
 	}
-	
+
 	.button {
 		padding: 6px 18px;
 	}
-	
+
 	.button__add {
 		padding: 6px 18px;
 	}
-	
+
 	.habits__header {
 		width: 100%;
 		padding: 2vh 2vw 2vh 2vw;
 	}
-	
+
 	.header__category__status {
 		text-align: center;
 		padding: 0 2vw 0 0;
 	}
-	
+
 	.header__category__title {
 		flex: 5;
 		padding: 0;
 	}
-	
+
 	.header__category__description {
 		display: block;
 		flex: 4;
@@ -525,7 +518,7 @@ main {
 		color: var(--color-gray-7);
 		padding: 0;
 	}
-	
+
 	.header__category__category {
 		display: block;
 		flex: 2;
@@ -535,20 +528,19 @@ main {
 		color: var(--color-gray-7);
 		padding: 0;
 	}
-	
+
 	.header__category__edit {
 		text-align: center;
 		padding: 0 0 0 2vw;
 	}
-	
-	
+
 	.habits__checkbox:checked {
 	}
-	
+
 	.habits__checkbox {
 		padding: 0 2vw 0 2vw;
 	}
-	
+
 	.habits__title {
 		flex: 5;
 		padding: 0;
@@ -557,7 +549,7 @@ main {
 	.habits__title span {
 		max-width: 230px;
 	}
-	
+
 	.habits__description {
 		flex: 4;
 		display: flex;
@@ -572,7 +564,6 @@ main {
 		white-space: nowrap;
 		max-width: 230px;
 	}
-	
 
 	.habits__category {
 		flex: 2;
@@ -581,15 +572,14 @@ main {
 		align-items: center;
 		padding: 0;
 	}
-	
+
 	.habits__category span {
 		width: auto;
 		height: auto;
 		padding: 0.7vh;
 	}
-	
+
 	.button__edit__habit {
 		padding: 0 2vw 0 0;
 	}
-
 }
