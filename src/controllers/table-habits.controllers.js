@@ -69,8 +69,7 @@ export default class TableHabit {
 
 			button.addEventListener("click", (event) => {
 				console.log(event);
-				// EditModalHabit.createModal(habit);
-				//? vai chamar o modal de editar habit
+				EditModalHabit.createModal(habit);
 			});
 
 			td5.append(button);
