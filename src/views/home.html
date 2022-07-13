@@ -23,7 +23,7 @@
 				<figure class="header-top__figure">
 					<img
 						src="https://i.pinimg.com/originals/be/2d/30/be2d307e7f0004d3b014ee1120756a93.png"
-						alt="avatar"
+						alt="Teste"
 						class="header-top__img"
 					/>
 				</figure>
@@ -32,7 +32,7 @@
 				<figure class="header-bottom__figure">
 					<img
 						src="https://i.pinimg.com/originals/be/2d/30/be2d307e7f0004d3b014ee1120756a93.png"
-						alt="avatar"
+						alt="Teste"
 						class="header-bottom__img"
 					/>
 				</figure>
@@ -41,7 +41,10 @@
 		</header>
 		<main>
 			<section class="filters">
-				<!-- <h3>Tarefas</h3>
+				<!-- <div class="fiters__title">
+					<h3>Tarefas</h3>
+				</div>
+
 				<div class="containerButtons">
 					<button class="button button__filter">Todos</button>
 					<button class="button button__filter">Concluidos</button>
@@ -50,57 +53,147 @@
 			</section>
 
 			<table class="habits">
-				<thead class="habits__header">
-					<tr>
-						<th>Status</th>
-						<th>Título</th>
-						<th>Descrição</th>
-						<th>Categoria</th>
-						<th>Editar</th>
+				<thead>
+					<tr class="habits__header">
+						<th class="header__category__status">Status</th>
+						<th class="header__category__title">Título</th>
+						<th class="header__category__description">Descrição</th>
+						<th class="header__category__category">Categoria</th>
+						<th class="header__category__edit">Editar</th>
 					</tr>
 				</thead>
 
 				<tbody class="habits__body">
-					<!-- <tr>
-						<td><input type="checkbox" class="habits__checkbox" /></td>
-						<td><h3 class="habits__title">Lorem ipsum dolor sit.</h3></td>
-						<td>
-							<p class="habits__description">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Labore, unde!
-							</p>
-						</td>
-						<td><span class="habits__category">Lorem.</span></td>
-						<td><button class="button button__editHabit">...</button></td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" class="habits__checkbox" /></td>
-						<td><h3 class="habits__title">Lorem ipsum dolor sit.</h3></td>
-						<td>
+					<!-- <tr class="habits__body__line">
+						<td class="habits__checkbox"><input type="checkbox" /></td>
+						<td class="habits__title">
+							<h3>Fazer exercícios segunda pela manhã
+						<td class="habits__description">
 							<p>
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Labore, unde!
+								Ir correr na praça próximo de casa
 							</p>
 						</td>
-						<td><span class="habits__category">Lorem.</span></td>
-						<td><button class="button button__editHabit">...</button></td>
+						<td><span class="habits__category">Saúde</span></td>
+						<td class="button button__edit__habit"><button>...</button></td>
 					</tr>
-					<tr>
-						<td><input type="checkbox" class="habits__checkbox" /></td>
-						<td><h3 class="habits__title">Lorem ipsum dolor sit.</h3></td>
-						<td>
+	
+					<tr class="habits__body__line">
+						<td class="habits__checkbox"><input type="checkbox" /></td>
+						<td class="habits__title">
+							<h3>Acessar conteúdo do assunto da semana anterior</h3>
+						</td>
+						<td class="habits__description">
 							<p>
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Labore, unde!
+								Esse hábito tem como objetivo
 							</p>
 						</td>
-						<td><span class="habits__category">Lorem.</span></td>
-						<td><button class="button button__editHabit">...</button></td>
+						<td><span class="habits__category">Estudos</span></td>
+						<td class="button button__edit__habit"><button>...</button></td>
+					</tr>
+	
+					<tr class="habits__body__line">
+						<td class="habits__checkbox"><input type="checkbox" /></td>
+						<td class="habits__title">
+							<h3>Pedir relatório de feedback após duas semanas</h3>
+						</td>
+						<td class="habits__description">
+							<p>
+								A importância desse tarefa
+							</p>
+						</td>
+						<td><span class="habits__category">Trabalho</span></td>
+						<td class="button button__edit__habit"><button>...</button></td>
+					</tr>
+	
+					<tr class="habits__body__line">
+						<td class="habits__checkbox"><input type="checkbox" /></td>
+						<td class="habits__title">
+							<h3>Fazer exercícios segunda pela manhã</h3>
+						</td>
+						<td class="habits__description">
+							<p>
+								Ir correr na praça próximo de casa
+							</p>
+						</td>
+						<td><span class="habits__category">Saúde</span></td>
+						<td class="button button__edit__habit"><button>...</button></td>
+					</tr>
+	
+					<tr class="habits__body__line">
+						<td class="habits__checkbox"><input type="checkbox" /></td>
+						<td class="habits__title">
+							<h3>Acessar conteúdo do assunto da semana anterior</h3>
+						</td>
+						<td class="habits__description">
+							<p>
+								Esse hábito tem como objetivo
+							</p>
+						</td>
+						<td><span class="habits__category">Estudos</span></td>
+						<td class="button button__edit__habit"><button>...</button></td>
+					</tr>
+	
+					<tr class="habits__body__line">
+						<td class="habits__checkbox"><input type="checkbox" /></td>
+						<td class="habits__title">
+							<h3>Pedir relatório de feedback após duas semanas</h3>
+						</td>
+						<td class="habits__description">
+							<p>
+								A importância desse tarefa
+							</p>
+						</td>
+						<td><span class="habits__category">Trabalho</span></td>
+						<td class="button button__edit__habit"><button>...</button></td>
+					</tr>
+	
+					<tr class="habits__body__line">
+						<td class="habits__checkbox"><input type="checkbox" /></td>
+						<td class="habits__title">
+							<h3>Fazer exercícios segunda pela manhã</h3>
+						</td>
+						<td class="habits__description">
+							<p>
+								Ir correr na praça próximo de casa
+							</p>
+						</td>
+						<td><span class="habits__category">Saúde</span></td>
+						<td class="button button__edit__habit"><button>...</button></td>
+					</tr>
+	
+					<tr class="habits__body__line">
+						<td class="habits__checkbox"><input type="checkbox" /></td>
+						<td class="habits__title">
+							<h3>Acessar conteúdo do assunto da semana anterior</h3>
+						</td>
+						<td class="habits__description">
+							<p>
+								Esse hábito tem como objetivo
+							</p>
+						</td>
+						<td><span class="habits__category">Estudos</span></td>
+						<td class="button button__edit__habit"><button>...</button></td>
+					</tr>
+	
+					<tr class="habits__body__line">
+						<td class="habits__checkbox"><input type="checkbox" /></td>
+						<td class="habits__title">
+							<h3>Pedir relatório de feedback após duas semanas</h3>
+						</td>
+						<td class="habits__description">
+							<p>
+								A importância desse tarefa
+							</p>
+						</td>
+						<td><span class="habits__category">Trabalho</span></td>
+						<td class="button button__edit__habit"><button>...</button></td>
 					</tr> -->
 				</tbody>
 			</table>
-			<button class="button button__next">Carregar mais</button>
 		</main>
-		<script type="module" src="../script/home.js"></script>
+
+		<button class="button__next">Carregar mais</button>
+
+		<script src="../script/home.js" type="module"></script>
 	</body>
 </html>

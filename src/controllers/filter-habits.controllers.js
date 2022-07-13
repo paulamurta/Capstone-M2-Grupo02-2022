@@ -9,8 +9,11 @@ export default class FilterHabits {
         const section = document.querySelector('section');
         section.classList.add('filters')
 
-        const titulo = document.createElement('h3');
-        titulo.innerText = 'Tarefas';
+        const titulo = document.createElement('div');
+        titulo.classList.add('fiters__title');
+        const h3 = document.createElement('h3');
+        h3.innerText = 'Tarefas';
+        titulo.append(h3)
 
         const divButtons = document.createElement('div');
         divButtons.classList.add('containerButtons');
