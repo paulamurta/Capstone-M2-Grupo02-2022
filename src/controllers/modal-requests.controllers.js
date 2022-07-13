@@ -3,15 +3,15 @@ export default class ModalRequest {
 		let body = document.querySelector("body");
 		let div = document.createElement("div");
 		div.classList.add("modal", "modal-sucess");
-		let i = document.createElement("i");
-		i.classList.add("bx", "bxs-check-circle", "bx-tada");
+		let img = document.createElement("img");
+		img.src = "./src/assets/check-circle.png";
 		let main = document.createElement("main");
 		let h3 = document.createElement("h3");
 		h3.innerText = "Sucesso!";
 		let p = document.createElement("p");
 		p.innerText = message;
 		main.append(h3, p);
-		div.append(i, main);
+		div.append(img, main);
 		body.appendChild(div);
 		setTimeout(() => {
 			div.style.opacity = "1";
@@ -28,15 +28,15 @@ export default class ModalRequest {
 		let body = document.querySelector("body");
 		let div = document.createElement("div");
 		div.classList.add("modal", "modal-error");
-		let i = document.createElement("i");
-		i.classList.add("bx", "bxs-x-circle", "bx-tada");
+		let img = document.createElement("img");
+		img.src = "./src/assets/x-circle.png";
 		let main = document.createElement("main");
 		let h3 = document.createElement("h3");
 		h3.innerText = "Erro!";
 		let p = document.createElement("p");
 		p.innerText = message;
 		main.append(h3, p);
-		div.append(i, main);
+		div.append(img, main);
 		body.appendChild(div);
 		setTimeout(() => {
 			div.style.opacity = "1";
