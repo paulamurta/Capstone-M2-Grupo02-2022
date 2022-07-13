@@ -209,12 +209,14 @@ export default class CreateModalHabit {
 		liHobby.append(imgHobby, spanHooby);
 		liHealth.append(imgHealth, spanHealth);
 
+		inputDropdown.name = "habit_category";
 		liWork.addEventListener("click", () => {
 			spanDropdown.innerText = liWork.innerText;
 			inputDropdown.name = "habit_category";
 			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
+		//	inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liHome.addEventListener("click", () => {
@@ -223,6 +225,7 @@ export default class CreateModalHabit {
 			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
+		//	inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liStudy.addEventListener("click", () => {
@@ -231,6 +234,8 @@ export default class CreateModalHabit {
 			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
+
+		//	inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liHobby.addEventListener("click", () => {
@@ -239,6 +244,7 @@ export default class CreateModalHabit {
 			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
+		//	inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liHealth.addEventListener("click", () => {
@@ -247,6 +253,7 @@ export default class CreateModalHabit {
 			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
+	//		inputDropdown.value = spanDropdown.innerText;
 		});
 
 		ulDropdown.append(liHome, liStudy, liHobby, liWork, liHealth);
@@ -260,6 +267,7 @@ export default class CreateModalHabit {
 
 			const modalCreate = document.querySelector(".create-modal")
 
+			const response = await Api.createHabit(data);
 			event.preventDefault();
 			const formValues = [...event.target.form];
 			const data = {};
@@ -287,5 +295,6 @@ export default class CreateModalHabit {
 				}, 2500); 
 			}
 		}); 
+
 	}
 }
