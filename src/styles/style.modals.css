@@ -491,3 +491,83 @@ textarea {
 		margin: 3.8rem auto;
 	}
 }
+
+
+/*Estilização Modal Update User*/
+
+.editUser-modal{
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100vw; 	
+	height: 100vh;
+	
+}
+.editUser-modal__content {
+	min-width: 10rem;
+	max-width: 31rem;
+	background-color: var(--color-white);
+	border-radius: 8px;
+	height: 22rem;
+	margin: 3.8rem auto;
+}
+.editUser-modal__title{
+	grid-area: title;
+	color: var(--color-gray-1);
+	font-size: 1.25rem;
+}
+.editUser-modal__form{
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+}
+.editUser-modal__label {
+	font-family: var(--font-inter);
+	padding-bottom: 0.5rem;
+	padding-top: 1.75rem;
+	font-size: 0.875rem;
+}
+.editUser-modal__input::placeholder{
+	font-family: var(--font-inter);
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.9rem;
+	color: var(--color-gray-2);
+	padding: 0.5rem;
+}
+.editUser-modal__input{
+	background-color: var(--color-gray-5);
+	border: 2px solid var(--color-gray-5);
+	border-radius: 4px;
+	height: 2.5rem;
+}
+.editUser-modal__input:focus{
+	border: 2px solid var(--color-dark-blue);
+}
+.editUser-modal__input:invalid{
+	border: 2px solid var(--color-red-1);
+}	
+.editUser__button{
+	background-color: var(--color-light-purple);
+	border: 2px solid var(--color-light-purple);
+	border-radius: 4px;
+	height: 2.8rem;
+	color: var(--color-white);
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	margin-top: 2rem;
+	transition: 0.4s;
+}
+.editUser__button:hover{
+	background-color: var(--color-blue);
+	border: 2px solid var(--color-blue);
+	cursor: pointer;
+	color: var(--color-white);
+	transition: 0.4s;
+	
+}
+

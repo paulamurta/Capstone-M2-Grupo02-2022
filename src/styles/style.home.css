@@ -53,7 +53,7 @@ body {
 */
 
 .header-top__img {
-	/* width: 40px; */
+	width: 2rem;
 	height: 5vh;
 	border-radius: 50%;
 	border: 2px solid var(--color-blue);
@@ -88,8 +88,8 @@ body {
 */
 
 .header-bottom__img {
-	/* width: 60px; */
-	height: 7.5vh;
+	width: 3.5rem;
+	height: 9vh;
 	border-radius: 50%;
 	border: 2px solid var(--color-white);
 	margin-right: 6vw;
