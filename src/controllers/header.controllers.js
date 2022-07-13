@@ -1,5 +1,3 @@
-import Api from "./api.controllers.js";
-
 class Header {
 	static async headerInfoUser() {
 		const userName = JSON.parse(

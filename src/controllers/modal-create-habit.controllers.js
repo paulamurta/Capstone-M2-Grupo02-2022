@@ -1,4 +1,5 @@
 import Api from "./api.controllers.js";
+import ModalRequest from "./modal-requests.controllers.js";
 
 export default class CreateModalHabit {
 	static createModal() {
@@ -68,7 +69,39 @@ export default class CreateModalHabit {
 			"create-modal__label label_category",
 			"Categoria"
 		);
+		const divDropdown = this.createOptionsDropDown();
 
+		const btnSave = CreateModalHabit.createElementModal(
+			"button",
+			"modal__button",
+			"Inserir"
+		);
+		btnSave.type = "submit";
+		btnSave.name = "submitBtn";
+
+		formCreate.append(
+			titleForm,
+			labelTitleForm,
+			inputTitleForm,
+			labelDescriptionForm,
+			inputDescriptionForm,
+			labelCategoryForm,
+			divDropdown,
+			btnSave
+		);
+		contentCreate.append(formCreate);
+
+		CreateModalHabit.createNewHabit();
+	}
+
+	static createElementModal(elem, className, innerText = "") {
+		const element = document.createElement(elem);
+		element.className = className;
+		if (innerText) element.innerText = innerText;
+		return element;
+	}
+
+	static createOptionsDropDown() {
 		const divDropdown = CreateModalHabit.createElementModal(
 			"div",
 			"create-modal__div"
@@ -164,69 +197,57 @@ export default class CreateModalHabit {
 		);
 		imgHealth.src = "../assets/health.png";
 
-		const btnSave = CreateModalHabit.createElementModal(
-			"button",
-			"modal__button",
-			"Inserir"
-		);
-		btnSave.type = "submit";
-		btnSave.name = "submitBtn";
-
 		liWork.append(imgWork, spanWork);
 		liHome.append(imgHome, spanHome);
 		liStudy.append(imgStudy, spanStudy);
 		liHobby.append(imgHobby, spanHooby);
 		liHealth.append(imgHealth, spanHealth);
 
-		ulDropdown.append(liHome, liStudy, liHobby, liWork, liHealth);
-		divDropdown.append(inputDropdown, spanDropdown, ulDropdown);
-
-		formCreate.append(
-			titleForm,
-			labelTitleForm,
-			inputTitleForm,
-			labelDescriptionForm,
-			inputDescriptionForm,
-			labelCategoryForm,
-			divDropdown,
-			btnSave
-		);
-		contentCreate.append(formCreate);
-
 		liWork.addEventListener("click", () => {
 			spanDropdown.innerText = liWork.innerText;
-			inputDropdown.value = spanDropdown.innerText;
+			inputDropdown.name = spanDropdown.innerText;
+			inputDropdown.value = spanDropdown.innerText
+				.toLowerCase()
+				.replace("ú", "u");
 		});
 
 		liHome.addEventListener("click", () => {
 			spanDropdown.innerText = liHome.innerText;
+			inputDropdown.name = spanDropdown.innerText
+				.toLowerCase()
+				.replace("ú", "u");
 			inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liStudy.addEventListener("click", () => {
 			spanDropdown.innerText = liStudy.innerText;
+			inputDropdown.name = spanDropdown.innerText
+				.toLowerCase()
+				.replace("ú", "u");
 			inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liHobby.addEventListener("click", () => {
 			spanDropdown.innerText = liHobby.innerText;
 			inputDropdown.value = spanDropdown.innerText;
+			inputDropdown.name = spanDropdown.innerText
+				.toLowerCase()
+				.replace("ú", "u");
 		});
 
 		liHealth.addEventListener("click", () => {
 			spanDropdown.innerText = liHealth.innerText;
 			inputDropdown.value = spanDropdown.innerText;
+			inputDropdown.name = spanDropdown.innerText
+				.toLowerCase()
+				.replace("ú", "u");
 		});
-		CreateModalHabit.createNewHabit();
-	}
 
-	static createElementModal(elem, className, innerText = "") {
-		const element = document.createElement(elem);
-		element.className = className;
-		if (innerText) element.innerText = innerText;
-		return element;
-	}
+		ulDropdown.append(liHome, liStudy, liHobby, liWork, liHealth);
+		divDropdown.append(inputDropdown, spanDropdown, ulDropdown);
 
+		return divDropdown;
+	}
 	static async createNewHabit() {
 		const buttonInsert = document.querySelector(".modal__button");
 		buttonInsert.addEventListener("click", async (event) => {
@@ -240,8 +261,15 @@ export default class CreateModalHabit {
 				}
 			});
 			data.habit_category = data.habit_category.toLowerCase().replace("ú", "u");
-			await Api.createHabit(data);
-			window.location.reload(true);
+			const response = await Api.createHabit(data);
+			response.message === "habit_category obrigatório"
+				? setTimeout(() => {
+						ModalRequest.modalError("Você deve selecionar alguma categoria");
+				  }, 1000)
+				: (window.location.reload(true),
+				  setTimeout(() => {
+						ModalRequest.modalSucess("Seu hábito foi alterado");
+				  }, 1000));
 		});
 	}
 }

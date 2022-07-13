@@ -1,5 +1,6 @@
 import Api from "../controllers/api.controllers.js";
 import EditModalHabit from "./modal-edit-habit.controllers.js";
+import ModalRequest from "./modal-requests.controllers.js";
 class DeleteModalHabit {
 	static createModal(id) {
 		const body = document.querySelector("body");
@@ -51,19 +52,22 @@ class DeleteModalHabit {
 
 		const buttonDelete = EditModalHabit.createElementModal(
 			"button",
-			"modal__button button__delete-changes",
+			"modal__button--edit button__delete-changes",
 			"Sim, excluir este hábito"
 		);
 
 		buttonDelete.addEventListener("click", async () => {
 			Api.deleteHabit(id);
-			document.location.reload(true);
+			ModalRequest.modalSucess("Seu hábito foi deletado");
+			setTimeout(() => {
+				document.location.reload(true);
+			}, 1200);
 			//deletar na API o post, e listar novamente as tarefas
 		});
 
 		const buttonCancel = EditModalHabit.createElementModal(
 			"button",
-			"modal__button-cancel modal__button",
+			"modal__button-cancel modal__button--edit",
 			"Cancelar"
 		);
 
