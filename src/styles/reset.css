@@ -2,6 +2,7 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
 }
 
 html,
@@ -99,6 +100,7 @@ button {
 html,
 body {
 	font-family: "Inter", sans-serif;
+	overflow-x: hidden;
 }
 
 article,

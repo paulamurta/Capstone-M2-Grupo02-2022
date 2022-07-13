@@ -1,6 +1,12 @@
 //! Ainda preciso terminar de fazer a requisição e entender esse css.
+import Api from "../controllers/api.controllers.js";
+import Habit from "../models/habit.model.js";
+import DeleteModalHabit from "./modal-delete-habit.controllers.js";
+import CreateModalHabit from "./modal-create-habit.controllers.js";
+import ModalRequest from "./modal-requests.controllers.js";
+
 class EditModalHabit {
-	static createModal() {
+	static createModal(habit) {
 		const body = document.querySelector("body");
 
 		const modalDiv = EditModalHabit.createElementModal("div", "edit-modal");
@@ -14,14 +20,13 @@ class EditModalHabit {
 
 		const buttonClose = EditModalHabit.createElementModal(
 			"button",
-			"modal__button-close",
+			"modal__button-close modal-edit__button--close",
 			"X"
 		);
 		modalContent.append(buttonClose);
 
 		buttonClose.addEventListener("click", function (event) {
 			modalDiv.remove();
-			//Fechar modal
 		});
 
 		const form = EditModalHabit.createElementModal("form", "edit-modal__form");
@@ -37,12 +42,18 @@ class EditModalHabit {
 			"edit-modal__label label__name",
 			"Título"
 		);
+		labelName.setAttribute;
 
 		const inputName = EditModalHabit.createElementModal(
 			"input",
 			"edit-modal__input input__name"
 		);
 		inputName.type = "text";
+		inputName.name = "habitTitle";
+
+		labelName.setAttribute("for", "habitTitle");
+		inputName.id = "habitTitle";
+		inputName.value = habit.habit_title;
 
 		const labelDescription = EditModalHabit.createElementModal(
 			"label",
@@ -51,44 +62,22 @@ class EditModalHabit {
 		);
 
 		const inputDescription = EditModalHabit.createElementModal(
-			"input",
+			"textarea",
 			"edit-modal__input  input__description"
 		);
-		inputDescription.type = "text";
+		inputDescription.name = "habitDescription";
+		inputDescription.value = habit.habit_description;
 
 		const categoryLabel = EditModalHabit.createElementModal(
 			"label",
 			"edit-modal__label  label__category",
 			"Categoria"
 		);
+		labelDescription.setAttribute("for", "description");
+		inputDescription.id = "description";
 
-		const categorySelect = EditModalHabit.createElementModal(
-			"select",
-			"edit-modal__select select__category"
-		);
-
-		const options = [
-			["Casa", "../assets/user.png"],
-			["Estudo", "../assets/study.png"],
-			["Lazer", "../assets/hobby.png"],
-			["Trabalho", "../assets/work.png"],
-			["Saúde", "../assets/health.png"],
-		];
-
-		options.forEach((option) => {
-			const optionElement = EditModalHabit.createElementModal(
-				"option",
-				"edit-modal__option",
-				option[0]
-			);
-			optionElement.value = option[0];
-
-			const icon = document.createElement("img");
-			icon.src = option[1];
-			optionElement.appendChild(icon);
-
-			categorySelect.append(optionElement);
-		});
+		const options = CreateModalHabit.createOptionsDropDown();
+		options.classList.add("select__category");
 
 		const status = EditModalHabit.createElementModal(
 			"label",
@@ -96,32 +85,54 @@ class EditModalHabit {
 			"Status"
 		);
 		status.setAttribute("for", "status");
-		status.id = "status";
-		status.name = "status";
 
 		const statusCheck = EditModalHabit.createElementModal(
 			"input",
 			"edit-modal__check input__status"
 		);
 		statusCheck.type = "checkbox";
-
+		statusCheck.name = "status";
+		statusCheck.id = "status";
+		if (habit.habit_status) {
+			statusCheck.setAttribute("checked", "true");
+			statusCheck.setAttribute("disabled", "true");
+		}
 		const buttonSave = EditModalHabit.createElementModal(
 			"button",
-			"modal__button button__save-changes",
+			"modal__button--edit button__save-changes",
 			"Salvar alterações"
 		);
 		buttonSave.type = "submit";
-		buttonSave.addEventListener("submit", function (event) {
-			//salvar alterações de edição, e listar novamente as tarefas
+
+		form.addEventListener("submit", async (event) => {
+			event.preventDefault();
+			const habitName = document.getElementsByName("habitTitle")[0].value;
+			const habitDescription =
+				document.getElementsByName("habitDescription")[0].value;
+			const habitContent = new Habit(habitName, habitDescription, "saude");
+			const statusCheck = document.getElementsByName("status")[0].checked;
+
+			const res = await Api.updateHabit(habit.habit_id, habitContent);
+			if (statusCheck) await Api.completeHabit();
+
+			ModalRequest.modalSucess("Seu hábito foi alterado");
+
+			setTimeout(() => {
+				document.location.reload(true);
+			}, 1000);
 		});
 
 		const buttonDelete = EditModalHabit.createElementModal(
 			"button",
-			"modal__button button__delete-changes",
+			"modal__button--edit modal__button-delete",
 			"Excluir"
 		);
-		buttonDelete.addEventListener("click", function (event) {
-			//deletar na API o post, e listar novamente as tarefas
+
+		buttonDelete.addEventListener("click", async (event) => {
+			event.preventDefault();
+			const modalEdit = document.querySelector(".edit-modal");
+			if (modalEdit) modalEdit.remove();
+			DeleteModalHabit.createModal(habit.habit_id);
 		});
 
 		form.append(
@@ -131,7 +142,7 @@ class EditModalHabit {
 			labelDescription,
 			inputDescription,
 			categoryLabel,
-			categorySelect,
+			options,
 			status,
 			statusCheck,
 			buttonDelete,
@@ -140,18 +151,11 @@ class EditModalHabit {
 
 		modalContent.append(form);
 	}
-
 	static createElementModal(elem, className, innerText = "") {
 		const element = document.createElement(elem);
 		element.className = className;
 		if (innerText) element.innerText = innerText;
 		return element;
-	}
-
-	static createEventModal() {
-		const modalButton = EditModalHabit.createModal();
-		modalButton.addEventListener("click", EditModalHabit.removeModal);
-		return;
 	}
 }
 

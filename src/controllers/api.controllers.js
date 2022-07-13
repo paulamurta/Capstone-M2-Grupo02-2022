@@ -1,30 +1,36 @@
 class Api {
-    static baseUrl = "https://habits-kenzie.herokuapp.com/api"
-    static token = localStorage.getItem("@habits-kenzie:token")
-    static headers = {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${this.token}`
-    }
+	static baseUrl = "https://habits-kenzie.herokuapp.com/api";
+	static token = localStorage.getItem("@habits-kenzie:token");
+	static headers = {
+		"Content-Type": "application/json",
+		Authorization: `Bearer ${JSON.parse(this.token)}`,
+	};
 
-    // Requisição de Login
-    static async login(loginData){
-        return await fetch(`${this.baseUrl}/userLogin`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(loginData)
-        })
-        .then(res => res.json())
-            .then(res => {
-                if (res.token) {
-                    localStorage.setItem("@habits-kenzie:user", JSON.stringify(res.response))
-                    localStorage.setItem("@habits-kenzie:token", JSON.stringify(res.token))
-                }
-                return res
-        })
-        .catch(err => console.log(err))
-    }
+	// Requisição de Login
+	static async login(loginData) {
+		return await fetch(`${this.baseUrl}/userLogin`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(loginData),
+		})
+			.then((res) => res.json())
+			.then((res) => {
+				if (res.token) {
+					localStorage.setItem(
+						"@habits-kenzie:user",
+						JSON.stringify(res.response)
+					);
+					localStorage.setItem(
+						"@habits-kenzie:token",
+						JSON.stringify(res.token)
+					);
+				}
+				return res;
+			})
+			.catch((err) => console.log(err));
+	}
 
 	// Requisição de User
 	static async updateProfile(content) {
