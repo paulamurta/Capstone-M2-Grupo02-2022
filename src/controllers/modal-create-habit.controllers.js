@@ -203,44 +203,31 @@ export default class CreateModalHabit {
 		liHobby.append(imgHobby, spanHooby);
 		liHealth.append(imgHealth, spanHealth);
 
+		inputDropdown.name = "habit_category";
 		liWork.addEventListener("click", () => {
 			spanDropdown.innerText = liWork.innerText;
-			inputDropdown.name = spanDropdown.innerText;
-			inputDropdown.value = spanDropdown.innerText
-				.toLowerCase()
-				.replace("ú", "u");
+			inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liHome.addEventListener("click", () => {
 			spanDropdown.innerText = liHome.innerText;
-			inputDropdown.name = spanDropdown.innerText
-				.toLowerCase()
-				.replace("ú", "u");
 			inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liStudy.addEventListener("click", () => {
 			spanDropdown.innerText = liStudy.innerText;
-			inputDropdown.name = spanDropdown.innerText
-				.toLowerCase()
-				.replace("ú", "u");
+
 			inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liHobby.addEventListener("click", () => {
 			spanDropdown.innerText = liHobby.innerText;
 			inputDropdown.value = spanDropdown.innerText;
-			inputDropdown.name = spanDropdown.innerText
-				.toLowerCase()
-				.replace("ú", "u");
 		});
 
 		liHealth.addEventListener("click", () => {
 			spanDropdown.innerText = liHealth.innerText;
 			inputDropdown.value = spanDropdown.innerText;
-			inputDropdown.name = spanDropdown.innerText
-				.toLowerCase()
-				.replace("ú", "u");
 		});
 
 		ulDropdown.append(liHome, liStudy, liHobby, liWork, liHealth);
@@ -251,6 +238,7 @@ export default class CreateModalHabit {
 	static async createNewHabit() {
 		const buttonInsert = document.querySelector(".modal__button");
 		buttonInsert.addEventListener("click", async (event) => {
+			const response = await Api.createHabit(data);
 			event.preventDefault();
 			const formValues = [...event.target.form];
 			const data = {};
@@ -260,8 +248,8 @@ export default class CreateModalHabit {
 					data[input.name] = input.value;
 				}
 			});
+			console.log(data.habit_category);
 			data.habit_category = data.habit_category.toLowerCase().replace("ú", "u");
-			const response = await Api.createHabit(data);
 			response.message === "habit_category obrigatório"
 				? setTimeout(() => {
 						ModalRequest.modalError("Você deve selecionar alguma categoria");
