@@ -8,6 +8,7 @@ export default class TableHabit {
 			const tr = document.createElement("tr");
 			tr.classList.add('habits__body__line');
 
+
 			const td1 = document.createElement("td");
 			td1.classList.add('habits__checkbox');
 
@@ -15,7 +16,7 @@ export default class TableHabit {
 			checkbox.type = "checkbox";
 			if (habit.habit_status == true) {
 				checkbox.checked = true;
-				checkbox.disabled = 'true';
+			//	checkbox.disabled = 'true';
 			}
 			checkbox.classList.add("habits__checkbox");
 
@@ -70,7 +71,7 @@ export default class TableHabit {
 			td5.append(button);
 
 			if(checkbox.checked == true){
-				tr.classList.add('line__checked');
+				tr.style.backgroundColor = "#e9ecef"
 			}
 			tr.append(td1, td2, td3, td4, td5);
 			table.append(tr);
