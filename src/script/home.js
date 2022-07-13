@@ -21,14 +21,17 @@ const data = await Api.readAllHabits();
 TableHabit.listHabit(await data);
 
 const buttonNext = document.querySelector(".button__next");
-buttonNext.addEventListener("click", () => {
+buttonNext.addEventListener("click", async () => {
 	data.length < TableHabit.postNumber
 		? (TableHabit.postNumber = data.length)
 		: (TableHabit.postNumber += 10);
 	TableHabit.listHabit(data);
+	if (TableHabit.postNumber >= data.length) {
+		buttonNext.style.display = "none";
+	} else {
+		buttonNext.style.display = "block";
+	}
 });
-
-TableHabit.verifyPostNumber < 10;
 
 //Apenas para teste
 //const testeUpdate = document.querySelector(".header-top__img")

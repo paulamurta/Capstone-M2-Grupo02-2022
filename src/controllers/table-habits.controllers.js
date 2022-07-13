@@ -9,12 +9,13 @@ export default class TableHabit {
 	static async listHabit(habit, filter = "") {
 		const table = document.querySelector(".habits__body");
 		table.innerHTML = "";
-		console.log(habit.length);
 		let posts = TableHabit.postNumber;
 
 		const buttonNext = document.querySelector(".button__next");
 		if (filter === "finished") {
 			posts = habit.length;
+			buttonNext.style.display = "none";
+		} else if (TableHabit.postNumber >= habit.length) {
 			buttonNext.style.display = "none";
 		} else {
 			buttonNext.style.display = "block";
