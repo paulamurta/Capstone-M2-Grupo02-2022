@@ -365,10 +365,6 @@ textarea {
 .create-modal__input:focus {
 	border: 2px solid var(--color-dark-blue);
 }
-.create-modal__input:invalid {
-	border: 2px solid var(--color-red-1);
-}
-
 .input__description {
 	height: 4.5rem;
 }
@@ -410,7 +406,6 @@ textarea {
 .create-modal__ul:hover {
 	background-color: var(--color-gray-5);
 }
-
 .create-modal__div {
 	position: relative;
 }
@@ -455,10 +450,6 @@ textarea {
 	transform: scaleY(1);
 }
 
-.create-modal__div:hover > .create-modal__span {
-	background-color: var(--color-light-blue);
-}
-
 @media screen and (max-width: 768px) and (min-width: 500px) {
 	.create-modal__content {
 		max-width: 28rem;
@@ -491,10 +482,8 @@ textarea {
 		margin: 3.8rem auto;
 	}
 }
-
-
 /*Estilização Modal Update User*/
-
+	
 .editUser-modal{
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;

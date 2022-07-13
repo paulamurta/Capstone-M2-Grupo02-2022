@@ -51,6 +51,12 @@ export default class CreateModalHabit {
 		inputTitleForm.placeholder = "Digitar título";
 		inputTitleForm.name = "habit_title";
 
+		const error = CreateModalHabit.createElementModal(
+			"p",
+			"error-message",
+			"Informação inválida"
+		);
+
 		const labelDescriptionForm = CreateModalHabit.createElementModal(
 			"label",
 			"create-modal__label label__description",
@@ -205,7 +211,7 @@ export default class CreateModalHabit {
 
 		liWork.addEventListener("click", () => {
 			spanDropdown.innerText = liWork.innerText;
-			inputDropdown.name = spanDropdown.innerText;
+			inputDropdown.name = "habit_category";
 			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
@@ -213,32 +219,32 @@ export default class CreateModalHabit {
 
 		liHome.addEventListener("click", () => {
 			spanDropdown.innerText = liHome.innerText;
-			inputDropdown.name = spanDropdown.innerText
+			inputDropdown.name = "habit_category";
+			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
-			inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liStudy.addEventListener("click", () => {
 			spanDropdown.innerText = liStudy.innerText;
-			inputDropdown.name = spanDropdown.innerText
+			inputDropdown.name = "habit_category";
+			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
-			inputDropdown.value = spanDropdown.innerText;
 		});
 
 		liHobby.addEventListener("click", () => {
 			spanDropdown.innerText = liHobby.innerText;
-			inputDropdown.value = spanDropdown.innerText;
-			inputDropdown.name = spanDropdown.innerText
+			inputDropdown.name = "habit_category";
+			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
 		});
 
 		liHealth.addEventListener("click", () => {
 			spanDropdown.innerText = liHealth.innerText;
-			inputDropdown.value = spanDropdown.innerText;
-			inputDropdown.name = spanDropdown.innerText
+			inputDropdown.name = "habit_category";
+			inputDropdown.value = spanDropdown.innerText
 				.toLowerCase()
 				.replace("ú", "u");
 		});
@@ -251,6 +257,9 @@ export default class CreateModalHabit {
 	static async createNewHabit() {
 		const buttonInsert = document.querySelector(".modal__button");
 		buttonInsert.addEventListener("click", async (event) => {
+
+			const modalCreate = document.querySelector(".create-modal")
+
 			event.preventDefault();
 			const formValues = [...event.target.form];
 			const data = {};
@@ -260,16 +269,23 @@ export default class CreateModalHabit {
 					data[input.name] = input.value;
 				}
 			});
-			data.habit_category = data.habit_category.toLowerCase().replace("ú", "u");
-			const response = await Api.createHabit(data);
-			response.message === "habit_category obrigatório"
-				? setTimeout(() => {
-						ModalRequest.modalError("Você deve selecionar alguma categoria");
-				  }, 1000)
-				: (window.location.reload(true),
-				  setTimeout(() => {
-						ModalRequest.modalSucess("Seu hábito foi alterado");
-				  }, 1000));
-		});
+
+			const response = await Api.createHabit(data)
+			
+			if (data.habit_category !== undefined)  {
+				data.habit_category = data.habit_category.toLowerCase().replace("ú", "u");
+			}
+			
+			if((response.message === 'habit_category obrigatório') || (response.message === 'habit_title obrigatório') || (response.message === 'habit_description obrigatório')  ){
+				ModalRequest.modalError("Você deve informar todos os campos")
+			}
+			else{
+				ModalRequest.modalSucess("Seu hábito foi criado");
+				modalCreate.style.display = "none";
+				setTimeout(() => {
+					window.location.reload(true);
+				}, 2500); 
+			}
+		}); 
 	}
 }
