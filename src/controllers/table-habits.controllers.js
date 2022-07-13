@@ -55,7 +55,7 @@ export default class TableHabit {
 			td4.append(category);
 
 			const td5 = document.createElement("tr");
-			td5.classList.add("button");
+			//td5.classList.add("button");
 			td5.classList.add("button__edit__habit");
 
 			const button = document.createElement("button");
