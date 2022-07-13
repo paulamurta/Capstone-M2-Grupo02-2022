@@ -205,8 +205,7 @@ main {
 	padding: 0 5vw;
 }
 
-.habits__checkbox:checked {
-}
+.habits__checkbox:checked {}
 
 .habits__body {
 	display: flex;
@@ -399,8 +398,7 @@ main {
 		padding: 0 0 0 2vw;
 	}
 
-	.habits__checkbox:checked {
-	}
+	.habits__checkbox:checked {}
 
 	.habits__body {
 		justify-content: center;
@@ -534,8 +532,7 @@ main {
 		padding: 0 0 0 2vw;
 	}
 
-	.habits__checkbox:checked {
-	}
+	.habits__checkbox:checked {}
 
 	.habits__checkbox {
 		padding: 0 2vw 0 2vw;
@@ -582,4 +579,89 @@ main {
 	.button__edit__habit {
 		padding: 0 2vw 0 0;
 	}
+
+}
+
+@media screen and (min-width: 750px) {
+
+	/* 	Início dropdown */
+	.dropdown ul {
+		list-style: none;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		padding-inline-start: 0;
+		box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+		border-radius: 4px;
+		width: fit-content;
+	}
+
+	.dropdown {
+		position: relative;
+		width: fit-content;
+		border-radius: 4px;
+	}
+
+	.label {
+		cursor: pointer;
+		background: var(--color-white);
+		padding: 0.8rem 1rem;
+		width: 200px;
+		display: block;
+		box-sizing: border-box;
+		transition: all 0.3s;
+		border-radius: 4px;
+	}
+
+	.items a {
+		color: var(--color-gray-1);
+		display: flex;
+		align-items: center;
+		padding: 15px 25px;
+		text-decoration: none;
+		transition: all 0.2s;
+		border-radius: 4px;
+		font-family: var(--font-inter);
+		font-size: 1rem;
+	}
+
+	.items a:hover {
+		background: var(--color-light-blue);
+	}
+
+	.items {
+		background: var(--color-white);
+		opacity: 0;
+		visibility: hidden;
+		min-width: fit-content;
+		height: 0;
+		position: absolute;
+		top: 60px;
+		transform-origin: top;
+		transform: scaleY(0);
+		transition: transform 0.3s;
+	}
+
+	.items::before {
+		content: "";
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		background: var(--color-white);
+		transform: rotate(45deg);
+		top: -7px;
+		left: 20px;
+		z-index: -1;
+	}
+
+	.dropdown:hover>.items {
+		opacity: 1;
+		visibility: visible;
+		height: unset;
+		transform: scaleY(1);
+	}
+
+	.items li img {
+		margin-right: 1rem;
+	}
+	/* Fim dropdown */
 }
