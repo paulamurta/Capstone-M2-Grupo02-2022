@@ -2,6 +2,9 @@
 import Api from "../controllers/api.controllers.js";
 import Habit from "../models/habit.model.js";
 import DeleteModalHabit from "./modal-delete-habit.controllers.js";
+import CreateModalHabit from "./modal-create-habit.controllers.js";
+import ModalRequest from "./modal-requests.controllers.js";
+
 class EditModalHabit {
 	static createModal(habit) {
 		const body = document.querySelector("body");
@@ -73,22 +76,8 @@ class EditModalHabit {
 		labelDescription.setAttribute("for", "description");
 		inputDescription.id = "description";
 
-		const categorySelect = EditModalHabit.createElementModal(
-			"select",
-			"edit-modal__select select__category"
-		);
-
-		const options = ["Casa", "Estudo", "Lazer", "Trabalho", "Saúde"];
-
-		options.forEach((option) => {
-			const optionElement = EditModalHabit.createElementModal(
-				"option",
-				"edit-modal__option",
-				option
-			);
-
-			categorySelect.append(optionElement);
-		});
+		const options = CreateModalHabit.createOptionsDropDown();
+		options.classList.add("select__category");
 
 		const status = EditModalHabit.createElementModal(
 			"label",
@@ -110,7 +99,7 @@ class EditModalHabit {
 		}
 		const buttonSave = EditModalHabit.createElementModal(
 			"button",
-			"modal__button button__save-changes",
+			"modal__button--edit button__save-changes",
 			"Salvar alterações"
 		);
 		buttonSave.type = "submit";
@@ -126,14 +115,19 @@ class EditModalHabit {
 			const res = await Api.updateHabit(habit.habit_id, habitContent);
 			if (statusCheck) await Api.completeHabit();
 
-			document.location.reload(true);
+			ModalRequest.modalSucess("Seu hábito foi alterado");
+
+			setTimeout(() => {
+				document.location.reload(true);
+			}, 1000);
 		});
 
 		const buttonDelete = EditModalHabit.createElementModal(
 			"button",
-			"modal__button modal__button-delete",
+			"modal__button--edit modal__button-delete",
 			"Excluir"
 		);
+
 		buttonDelete.addEventListener("click", async (event) => {
 			event.preventDefault();
 			const modalEdit = document.querySelector(".edit-modal");
@@ -148,7 +142,7 @@ class EditModalHabit {
 			labelDescription,
 			inputDescription,
 			categoryLabel,
-			categorySelect,
+			options,
 			status,
 			statusCheck,
 			buttonDelete,

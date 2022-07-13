@@ -4,7 +4,7 @@ textarea {
 	padding: 10px;
 }
 
-.edit-modal{
+.edit-modal {
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
 	display: flex;
@@ -37,6 +37,8 @@ textarea {
 	min-width: 305px;
 	max-width: 502px;
 	max-height: 520px;
+	margin-top: 3.8rem;
+
 	margin-top: 29px;
 	background-color: var(--color-white);
 	border-radius: 8px;
@@ -46,7 +48,7 @@ textarea {
 	.edit-modal__content {
 		width: 100%;
 		max-width: 502px;
-		margin: 29px auto;
+		margin: 3.8rem auto;
 	}
 }
 
@@ -69,11 +71,14 @@ textarea {
 
 .modal__button-delete {
 	grid-area: button-delete;
-	background-color: var(--color-gray-5);
+	background-color: var(--color-gray-4);
 	justify-self: center;
 	width: 100%;
 }
-
+.modal__button-delete:hover {
+	background-color: var(--color-gray-5);
+	transition: 0.4s;
+}
 @media (min-width: 768px) {
 	.modal__button-delete {
 		max-width: 191px;
@@ -158,7 +163,7 @@ textarea {
 .edit-modal__check {
 }
 
-.modal__button {
+.modal__button--edit {
 	font-weight: 600;
 	border-radius: 4px;
 	height: 40px;
@@ -169,7 +174,7 @@ textarea {
 
 .button__save-changes {
 	grid-area: button-save;
-	background-color: var(--color-light-blue-2);
+	background-color: var(--color-dark-blue);
 	justify-self: center;
 	color: var(--color-gray-5);
 	width: 100%;
@@ -177,9 +182,14 @@ textarea {
 	margin-bottom: 10px;
 }
 
+.button__save-changes:hover {
+	background-color: var(--color-light-blue-2);
+	transition: 0.4s;
+}
+
 .button__delete-changes {
 	grid-area: button-delete;
-	background-color: var(--color-gray-5);
+	background-color: var(--color-gray-4);
 	justify-self: center;
 	width: 100%;
 }
@@ -198,7 +208,8 @@ textarea {
 .modal-delete {
 	width: 305px;
 	max-height: 360px;
-	margin-top: 29px;
+	margin-top: 3.8rem;
+
 	background-color: var(--color-white);
 	border-radius: 8px;
 }
@@ -235,15 +246,22 @@ textarea {
 	border-radius: 8px;
 }
 
+.button__delete-changes:hover {
+	background-color: var(--color-red-3);
+	transition: 0.4s;
+}
+
 .modal__button-cancel {
 	grid-area: cancel;
-	background-color: var(--color-gray-5);
+	background-color: var(--color-gray-4);
 	color: var(--color-gray-1);
 	font-weight: 600;
 	height: 40px;
 	border-radius: 8px;
 }
-
+.modal__button-cancel:hover {
+	background-color: var(--color-gray-5);
+}
 @media (min-width: 768px) {
 	.modal-delete {
 		width: 502px;
@@ -286,15 +304,14 @@ textarea {
 }
 
 /*Estilização Modal Create Habit*/
-.create-modal{
+.create-modal {
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 1;
-	width: 100vw; 	
+	width: 100vw;
 	height: 100vh;
-	
 }
 
 .modal__button-close {
@@ -315,12 +332,12 @@ textarea {
 	margin: 3.8rem auto;
 }
 
-.create-modal__title{
+.create-modal__title {
 	grid-area: title;
 	color: var(--color-gray-1);
 	font-size: 1.25rem;
 }
-.create-modal__form{
+.create-modal__form {
 	display: flex;
 	flex-direction: column;
 	padding: 2rem;
@@ -331,7 +348,7 @@ textarea {
 	padding-top: 1.75rem;
 	font-size: 0.875rem;
 }
-.create-modal__input::placeholder{
+.create-modal__input::placeholder {
 	font-family: var(--font-inter);
 	font-weight: 400;
 	font-size: 1rem;
@@ -339,25 +356,25 @@ textarea {
 	color: var(--color-gray-2);
 	padding: 0.5rem;
 }
-.create-modal__input{
+.create-modal__input {
 	background-color: var(--color-gray-5);
 	border: 2px solid var(--color-gray-5);
 	border-radius: 4px;
 	height: 2.5rem;
 }
-.create-modal__input:focus{
+.create-modal__input:focus {
 	border: 2px solid var(--color-dark-blue);
 }
-.create-modal__input:invalid{
+.create-modal__input:invalid {
 	border: 2px solid var(--color-red-1);
 }
 
-.input__description{
+.input__description {
 	height: 4.5rem;
 }
-.modal__button{
+.modal__button {
 	background-color: var(--color-blue);
-	border: 2px solid #415AF3;
+	border: 2px solid #415af3;
 	border-radius: 4px;
 	height: 2.8rem;
 	color: var(--color-white);
@@ -368,14 +385,14 @@ textarea {
 	margin-top: 2rem;
 	transition: 0.4s;
 }
-.modal__button:hover{
-	background-color: var(--color-dark-blue);
+.modal__button:hover {
+	background-color: var(--color-light-blue-2);
+	border-color: var(--color-light-blue-2);
 	cursor: pointer;
 	color: var(--color-white);
 	transition: 0.4s;
-	
 }
-.create-modal__ul{
+.create-modal__ul {
 	margin-block-start: 0;
 	margin-block-end: 0;
 	padding-inline-start: 0;
@@ -390,14 +407,14 @@ textarea {
 	transition: transform 0.3s;
 	background-color: var(--color-gray-5);
 }
-.create-modal__ul:hover{
+.create-modal__ul:hover {
 	background-color: var(--color-gray-5);
 }
 
-.create-modal__div{
+.create-modal__div {
 	position: relative;
 }
-.create-modal__span{
+.create-modal__span {
 	cursor: pointer;
 	background-color: var(--color-gray-5);
 	border: 2px solid var(--color-gray-5);
@@ -408,7 +425,7 @@ textarea {
 	box-sizing: border-box;
 	transition: all 0.3s;
 }
-.create-modal__li{
+.create-modal__li {
 	color: var(--color-gray-2);
 	display: flex;
 	align-items: center;
@@ -417,11 +434,11 @@ textarea {
 	gap: 1rem;
 }
 
-.create-modal__li:hover{
+.create-modal__li:hover {
 	background-color: var(--color-light-blue);
 	cursor: pointer;
 }
-.create-modal__ul::before{
+.create-modal__ul::before {
 	content: "";
 	position: absolute;
 	width: 15px;
@@ -431,44 +448,45 @@ textarea {
 	left: 20px;
 	z-index: -1;
 }
-.create-modal__div:hover > .create-modal__ul{
+.create-modal__div:hover > .create-modal__ul {
 	opacity: 1;
 	visibility: visible;
 	height: unset;
 	transform: scaleY(1);
 }
-.create-modal__div:hover > .create-modal__span{
-	background-color: var(--color-light-blue)
+
+.create-modal__div:hover > .create-modal__span {
+	background-color: var(--color-light-blue);
 }
 
 @media screen and (max-width: 768px) and (min-width: 500px) {
-	.create-modal__content{
+	.create-modal__content {
 		max-width: 28rem;
 	}
 }
-@media screen and (max-width: 499px) and (min-width: 465px)  {
-	.create-modal__content{
+@media screen and (max-width: 499px) and (min-width: 465px) {
+	.create-modal__content {
 		max-width: 24rem;
 	}
 }
 @media screen and (max-width: 464px) and (min-width: 360px) {
-	.create-modal__content{
+	.create-modal__content {
 		max-width: 20.5rem;
 		margin: 3.8rem auto;
 	}
-	.create-modal__form{
+	.create-modal__form {
 		width: 100%;
 	}
 }
-@media screen and (max-width: 359px){
-	.create-modal__content{
+@media screen and (max-width: 359px) {
+	.create-modal__content {
 		max-width: 19rem;
 		margin: 3.8rem auto;
 	}
 }
 
-@media  screen and (max-width: 320px) {
-	.create-modal__content{
+@media screen and (max-width: 320px) {
+	.create-modal__content {
 		max-width: 18rem;
 		margin: 3.8rem auto;
 	}
