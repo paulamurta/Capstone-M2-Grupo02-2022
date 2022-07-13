@@ -492,18 +492,16 @@ textarea {
 	}
 }
 
-
 /*Estilização Modal Update User*/
 
-.editUser-modal{
+.editUser-modal {
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 1;
-	width: 100vw; 	
+	width: 100vw;
 	height: 100vh;
-	
 }
 .editUser-modal__content {
 	min-width: 10rem;
@@ -513,12 +511,12 @@ textarea {
 	height: 22rem;
 	margin: 3.8rem auto;
 }
-.editUser-modal__title{
+.editUser-modal__title {
 	grid-area: title;
 	color: var(--color-gray-1);
 	font-size: 1.25rem;
 }
-.editUser-modal__form{
+.editUser-modal__form {
 	display: flex;
 	flex-direction: column;
 	padding: 2rem;
@@ -529,7 +527,7 @@ textarea {
 	padding-top: 1.75rem;
 	font-size: 0.875rem;
 }
-.editUser-modal__input::placeholder{
+.editUser-modal__input::placeholder {
 	font-family: var(--font-inter);
 	font-weight: 400;
 	font-size: 1rem;
@@ -537,19 +535,19 @@ textarea {
 	color: var(--color-gray-2);
 	padding: 0.5rem;
 }
-.editUser-modal__input{
+.editUser-modal__input {
 	background-color: var(--color-gray-5);
 	border: 2px solid var(--color-gray-5);
 	border-radius: 4px;
 	height: 2.5rem;
 }
-.editUser-modal__input:focus{
+.editUser-modal__input:focus {
 	border: 2px solid var(--color-dark-blue);
 }
-.editUser-modal__input:invalid{
+.editUser-modal__input:invalid {
 	border: 2px solid var(--color-red-1);
-}	
-.editUser__button{
+}
+.editUser__button {
 	background-color: var(--color-light-purple);
 	border: 2px solid var(--color-light-purple);
 	border-radius: 4px;
@@ -562,12 +560,59 @@ textarea {
 	margin-top: 2rem;
 	transition: 0.4s;
 }
-.editUser__button:hover{
+.editUser__button:hover {
 	background-color: var(--color-blue);
 	border: 2px solid var(--color-blue);
 	cursor: pointer;
 	color: var(--color-white);
 	transition: 0.4s;
-	
 }
 
+.create-modal,
+.edit-modal {
+	animation: slidein 1s;
+}
+.create-modal__content,
+.edit-modal__content {
+	animation: scalebig 1s;
+}
+
+@keyframes scalebig {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.modal--transition-small {
+	animation: scalesmall 2s;
+}
+
+.modal--transition-opacity {
+	animation: opacitydown 2s;
+}
+@keyframes scalesmall {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+
+@keyframes opacitydown {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

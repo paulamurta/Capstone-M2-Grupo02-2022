@@ -4,9 +4,10 @@ import Habit from "../models/habit.model.js";
 import DeleteModalHabit from "./modal-delete-habit.controllers.js";
 import CreateModalHabit from "./modal-create-habit.controllers.js";
 import ModalRequest from "./modal-requests.controllers.js";
+import TableHabit from "./table-habits.controllers.js";
 
 class EditModalHabit {
-	static createModal(habit) {
+	static async createModal(habit) {
 		const body = document.querySelector("body");
 
 		const modalDiv = EditModalHabit.createElementModal("div", "edit-modal");
@@ -129,8 +130,12 @@ class EditModalHabit {
 				ModalRequest.modalError("Você deve selecionar alguma categoria");
 			} else {
 				ModalRequest.modalSucess("Seu hábito foi alterado");
+				const newData = await Api.readAllHabits();
+				modalDiv.classList.add("modal--transition-opacity");
+				modalContent.classList.add("modal--transition-small");
 				setTimeout(() => {
-					document.location.reload(true);
+					modalDiv.remove();
+					TableHabit.listHabit(newData);
 				}, 1000);
 			}
 		});
@@ -145,6 +150,7 @@ class EditModalHabit {
 			event.preventDefault();
 			const modalEdit = document.querySelector(".edit-modal");
 			if (modalEdit) modalEdit.remove();
+
 			DeleteModalHabit.createModal(habit.habit_id);
 		});
 

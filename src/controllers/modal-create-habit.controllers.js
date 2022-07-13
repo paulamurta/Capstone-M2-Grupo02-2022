@@ -1,8 +1,9 @@
 import Api from "./api.controllers.js";
 import ModalRequest from "./modal-requests.controllers.js";
+import TableHabit from "./table-habits.controllers.js";
 
 export default class CreateModalHabit {
-	static createModal() {
+	static async createModal() {
 		const body = document.querySelector("body");
 
 		const modalCreate = CreateModalHabit.createElementModal(
@@ -78,28 +79,7 @@ export default class CreateModalHabit {
 		);
 		btnSave.type = "submit";
 		btnSave.name = "submitBtn";
-		// btnSave.addEventListener("click", async (event) => {
-		// 	event.preventDefault();
-		// 	const response = await Api.createHabit(data);
-		// 	const formValues = [...event.target.form];
-		// 	const data = {};
 
-		// 	formValues.forEach((input) => {
-		// 		if (input.value != "") {
-		// 			data[input.name] = input.value;
-		// 		}
-		// 	});
-		// 	console.log(data.habit_category);
-		// 	data.habit_category = data.habit_category.toLowerCase().replace("ú", "u");
-		// 	response.message === "habit_category obrigatório"
-		// 		? setTimeout(() => {
-		// 				ModalRequest.modalError("Você deve selecionar alguma categoria");
-		// 		  }, 1000)
-		// 		: (window.location.reload(true),
-		// 		  setTimeout(() => {
-		// 				ModalRequest.modalSucess("Seu hábito foi alterado");
-		// 		  }, 1000));
-		// });
 		formCreate.append(
 			titleForm,
 			labelTitleForm,
@@ -285,10 +265,14 @@ export default class CreateModalHabit {
 				ModalRequest.modalError("Você deve informar todos os campos");
 			} else {
 				ModalRequest.modalSucess("Seu hábito foi criado");
-				modalCreate.remove();
-				setTimeout(() => {
-					window.location.reload(true);
-				}, 1200);
+				const contentCreate = document.querySelector(".create-modal__content");
+				contentCreate.classList.add("modal--transition-small");
+				modalCreate.classList.add("modal--transition-opacity");
+				setTimeout(async () => {
+					modalCreate.remove();
+					const habit = await Api.readAllHabits();
+					TableHabit.listHabit(habit);
+				}, 1000);
 			}
 		});
 	}

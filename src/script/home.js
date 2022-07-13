@@ -33,6 +33,11 @@ buttonNext.addEventListener("click", async () => {
 	}
 });
 
+setTimeout(() => {
+	const animationBody = document.querySelector("body");
+	animationBody.classList.remove("animation-screen");
+}, 1000);
+
 //Apenas para teste
 //const testeUpdate = document.querySelector(".header-top__img")
 //testeUpdate.addEventListener("click", EditModalUser.createModal);
