@@ -1,9 +1,11 @@
 import Api from "./api.controllers.js";
 import TableHabit from "./table-habits.controllers.js";
+import CreateModalHabit from "./modal-create-habit.controllers.js";
+import EditModalHabit from "./modal-edit-habit.controllers.js";
 
-export default class FilterHabits{
-    
-    static async createFilters(habitData){
+export default class FilterHabits {
+
+    static async createFilters(habitData) {
         const section = document.querySelector('section');
         section.classList.add('filters')
 
@@ -20,7 +22,7 @@ export default class FilterHabits{
         buttonAll.classList.add('button');
         buttonAll.classList.add('button__filter');
         buttonAll.innerText = 'Todos';
-        buttonAll.addEventListener('click',() => {
+        buttonAll.addEventListener('click', () => {
             document.querySelector('.habits__body').innerHTML = "";
             TableHabit.listHabit(habitData);
         })
@@ -32,7 +34,7 @@ export default class FilterHabits{
         buttonCompleted.addEventListener('click', () => {
             const habitComplete = []
             habitData.forEach(habit => {
-                if(habit.habit_status == true) habitComplete.push(habit);
+                if (habit.habit_status == true) habitComplete.push(habit);
             })
 
             document.querySelector('.habits__body').innerHTML = "";
@@ -43,8 +45,9 @@ export default class FilterHabits{
         buttonAdd.classList.add('button');
         buttonAdd.classList.add('button__add');
         buttonAdd.innerText = 'Criar';
+
         buttonAdd.addEventListener('click', () => {
-            console.log('botão criar');
+            CreateModalHabit.createModal();
         })
 
         divButtons.append(buttonAll, buttonCompleted, buttonAdd);
