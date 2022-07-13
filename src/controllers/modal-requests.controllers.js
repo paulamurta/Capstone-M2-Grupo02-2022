@@ -4,7 +4,12 @@ export default class ModalRequest {
 		let div = document.createElement("div");
 		div.classList.add("modal", "modal-sucess");
 		let img = document.createElement("img");
-		img.src = "./src/assets/check-circle.png";
+		if (window.location.href.includes("home")) {
+			img.src = "../assets/check-circle.png";
+		} else {
+			img.src = "./src/assets/check-circle.png";
+		}
+
 		let main = document.createElement("main");
 		let h3 = document.createElement("h3");
 		h3.innerText = "Sucesso!";
@@ -29,7 +34,14 @@ export default class ModalRequest {
 		let div = document.createElement("div");
 		div.classList.add("modal", "modal-error");
 		let img = document.createElement("img");
-		img.src = "./src/assets/x-circle.png";
+		if (window.location.href.includes("home")) {
+			img.src = "../assets/x-circle.png";
+		} else {
+			img.src = "./src/assets/x-circle.png";
+		}
+
+		console.log(img);
+
 		let main = document.createElement("main");
 		let h3 = document.createElement("h3");
 		h3.innerText = "Erro!";
