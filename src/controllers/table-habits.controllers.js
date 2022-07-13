@@ -1,6 +1,8 @@
 import Api from "./api.controllers.js";
 import EditModalHabit from "./modal-edit-habit.controllers.js";
 
+// localStorage.setItem("@habits-kenzie:number-post")
+
 export default class TableHabit {
 	static async listHabit(habitsData) {
 		const table = document.querySelector(".habits__body");
