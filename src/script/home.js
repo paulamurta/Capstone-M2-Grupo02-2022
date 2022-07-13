@@ -3,7 +3,7 @@ import FilterHabits from "../controllers/filter-habits.controllers.js";
 import TableHabit from "../controllers/table-habits.controllers.js";
 import Header from "../controllers/header.controllers.js";
 import EditModalHabit from "../controllers/modal-edit-habit.controllers.js";
-import CreateModalHabit from "../controllers/modal-create-habit.controllers.js";
+import EditModalUser from "../controllers/modal-edit-user-controller.js"
 
 Header.headerInfoUser();
 //! Login para carregar a página, apagar depois
@@ -13,10 +13,13 @@ Api.login({
 	password: "8ad51ba84da177f2de190940dda6c9bc",
 });
 
-console.log(await Api.readAllHabits());
+await Api.readAllHabits();
 FilterHabits.createFilters(await Api.readAllHabits());
 TableHabit.listHabit(await Api.readAllHabits());
 
+//Apenas para teste
+//const testeUpdate = document.querySelector(".header-top__img")
+//testeUpdate.addEventListener("click", EditModalUser.createModal);
 
 //! Deletar depois => Só para ver o modal edit.
 //const teste = document.querySelector(".button__add");
