@@ -96,7 +96,7 @@ export default class CreateModalHabit {
 		const spanWork = CreateModalHabit.createElementModal(
 			"span",
 			"create-modal-li__span",
-			"trabalho"
+			"Trabalho"
 		);
 		const imgWork = CreateModalHabit.createElementModal(
 			"img",
@@ -111,7 +111,7 @@ export default class CreateModalHabit {
 		const spanHome = CreateModalHabit.createElementModal(
 			"span",
 			"create-modal-li__span",
-			"casa"
+			"Casa"
 		);
 		const imgHome = CreateModalHabit.createElementModal(
 			"img",
@@ -126,7 +126,7 @@ export default class CreateModalHabit {
 		const spanStudy = CreateModalHabit.createElementModal(
 			"span",
 			"create-modal-li__span",
-			"estudos"
+			"Estudos"
 		);
 		const imgStudy = CreateModalHabit.createElementModal(
 			"img",
@@ -141,7 +141,7 @@ export default class CreateModalHabit {
 		const spanHooby = CreateModalHabit.createElementModal(
 			"span",
 			"create-modal-li__span",
-			"lazer"
+			"Lazer"
 		);
 		const imgHobby = CreateModalHabit.createElementModal(
 			"img",
@@ -156,7 +156,7 @@ export default class CreateModalHabit {
 		const spanHealth = CreateModalHabit.createElementModal(
 			"span",
 			"create-modal-li__span",
-			"saude"
+			"Saúde"
 		);
 		const imgHealth = CreateModalHabit.createElementModal(
 			"img",
@@ -239,6 +239,7 @@ export default class CreateModalHabit {
 					data[input.name] = input.value;
 				}
 			});
+			data.habit_category = data.habit_category.toLowerCase().replace("ú", "u");
 			await Api.createHabit(data);
 			window.location.reload(true);
 		});
