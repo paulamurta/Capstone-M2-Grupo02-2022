@@ -33,6 +33,10 @@ buttonNext.addEventListener("click", async () => {
 	}
 });
 
+
+const modalUserEdit = document.querySelector(".linkEditUser")
+modalUserEdit.addEventListener("click", EditModalUser.createModal);
+
 setTimeout(() => {
 	const animationBody = document.querySelector("body");
 	animationBody.classList.remove("animation-screen");
@@ -41,6 +45,7 @@ setTimeout(() => {
 //Apenas para teste
 //const testeUpdate = document.querySelector(".header-top__img")
 //testeUpdate.addEventListener("click", EditModalUser.createModal);
+
 
 //! Deletar depois => Só para ver o modal edit.
 //const teste = document.querySelector(".button__add");
