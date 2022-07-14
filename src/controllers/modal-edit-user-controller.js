@@ -139,4 +139,25 @@ export default class EditModalUser {
 			}
 		});
 	}
+
+	static modalEditUserInputFeedback() {
+		const inputImage = document.querySelector(".input__image");
+		const btnEdit = document.querySelector(".editUser__button")
+		const spanImage = document.createElement("span");
+
+		spanImage.classList.add("input__feedback-error");
+		spanImage.innerText = "Você deve informar a imagem";
+		inputImage.insertAdjacentElement("afterend", spanImage);
+		spanImage.style.display = "none";
+
+		btnEdit.addEventListener("click", (event) => {
+			if (inputImage.value === "") {
+				spanImage.style.display = "block";
+				inputImage.style.borderColor = "var(--color-red-1)";
+			} else {
+				spanImage.style.display = "none";
+				inputImage.style.borderColor = "var(--color-gray-5)";
+			}
+		});
+	}
 }

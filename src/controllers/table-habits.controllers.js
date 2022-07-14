@@ -84,6 +84,7 @@ export default class TableHabit {
 
 			button.addEventListener("click", (event) => {
 				EditModalHabit.createModal(habit[i]);
+				EditModalHabit.modalEditHabitInputFeedback();
 			});
 
 			td5.append(button);

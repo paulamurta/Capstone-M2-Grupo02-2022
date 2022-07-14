@@ -192,6 +192,7 @@ export default class CreateModalHabit {
 		let inputTitle = document.querySelector(".input__title");
 		let inputDescription = document.querySelector(".input__description");
 		let span = document.createElement("span");
+		
 		span.classList.add("input__feedback-error");
 		span.innerText = "Você deve informar o título";
 		inputTitle.insertAdjacentElement("afterend", span);

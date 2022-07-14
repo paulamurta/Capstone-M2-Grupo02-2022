@@ -35,7 +35,11 @@ buttonNext.addEventListener("click", async () => {
 });
 
 const modalUserEdit = document.querySelector(".linkEditUser");
-modalUserEdit.addEventListener("click", EditModalUser.createModal);
+modalUserEdit.addEventListener("click", () => {
+	EditModalUser.createModal();
+	EditModalUser.modalEditUserInputFeedback();
+})
+
 
 setTimeout(() => {
 	const animationBody = document.querySelector("body");

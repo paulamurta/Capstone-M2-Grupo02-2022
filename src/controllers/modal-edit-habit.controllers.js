@@ -178,6 +178,27 @@ class EditModalHabit {
 		if (innerText) element.innerText = innerText;
 		return element;
 	}
+	static modalEditHabitInputFeedback() {
+
+		const inputTitle = document.querySelector(".input__name");
+		const inputDescription = document.querySelector(".input__description");
+		const spanTile = document.createElement("span");
+		spanTile.classList.add("input__feedback-errorEdit");
+
+		spanTile.innerText = "Você deve informar o título";
+		inputTitle.insertAdjacentElement("afterend", spanTile);
+		spanTile.style.display = "none";
+
+		inputDescription.addEventListener("click", (event) => {
+			if (inputTitle.value === "") {	
+				spanTile.style.display = "block";
+				inputTitle.style.borderColor = "var(--color-red-1)";
+			} else {
+				spanTile.style.display = "none";
+				inputTitle.style.borderColor = "var(--color-gray-5)";
+			}
+		});
+	}
 }
 
 export default EditModalHabit;
