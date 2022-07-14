@@ -7,6 +7,7 @@ import EditModalUser from "../controllers/modal-edit-user-controller.js";
 
 Header.headerInfoUser();
 //! Login para carregar a página, apagar depois
+Header.logout();
 
 Api.login({
 	email: "grupo2RafaelK@mail.com",
