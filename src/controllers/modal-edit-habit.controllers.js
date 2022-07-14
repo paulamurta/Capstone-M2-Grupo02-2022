@@ -110,16 +110,18 @@ class EditModalHabit {
 			const habitName = document.getElementsByName("habitTitle")[0].value;
 			const habitDescription =
 				document.getElementsByName("habitDescription")[0].value;
-			const habitCategory =
-				document.getElementsByName("habit_category")[0].value;
-			console.log(habitCategory);
+			const habitCategory = document
+				.getElementsByName("habit_category")[0]
+				.value.toLowerCase()
+				.replace("ú", "u");
+
 			const habitContent = new Habit(
 				habitName,
 				habitDescription,
 				habitCategory
 			);
 			const statusCheck = document.getElementsByName("status")[0].checked;
-
+			console.log(habitContent);
 			const res = await Api.updateHabit(habit.habit_id, habitContent);
 			if (statusCheck) await Api.completeHabit(habit.habit_id);
 
