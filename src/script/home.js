@@ -4,7 +4,7 @@ import TableHabit from "../controllers/table-habits.controllers.js";
 import Header from "../controllers/header.controllers.js";
 import EditModalHabit from "../controllers/modal-edit-habit.controllers.js";
 import EditModalUser from "../controllers/modal-edit-user-controller.js";
-
+import DarkMode from "../controllers/dark-mode.controllers.js";
 Header.headerInfoUser();
 //! Login para carregar a página, apagar depois
 Header.logout();
@@ -34,8 +34,7 @@ buttonNext.addEventListener("click", async () => {
 	}
 });
 
-
-const modalUserEdit = document.querySelector(".linkEditUser")
+const modalUserEdit = document.querySelector(".linkEditUser");
 modalUserEdit.addEventListener("click", EditModalUser.createModal);
 
 setTimeout(() => {
@@ -43,10 +42,14 @@ setTimeout(() => {
 	animationBody.classList.remove("animation-screen");
 }, 1000);
 
+const toggle = document.querySelector(".toggle");
+toggle.addEventListener("click", (event) => {
+	DarkMode.changeTheme(event);
+});
+
 //Apenas para teste
 //const testeUpdate = document.querySelector(".header-top__img")
 //testeUpdate.addEventListener("click", EditModalUser.createModal);
-
 
 //! Deletar depois => Só para ver o modal edit.
 //const teste = document.querySelector(".button__add");
