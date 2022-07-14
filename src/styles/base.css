@@ -5,6 +5,10 @@
 	--color-light-blue-2: #a0adf9;
 	--color-purple: #9747ff;
 	--color-light-purple: #a0adf9;
+	--color-blue-logo: #415af3;
+	--color-blue-category: #415af3;
+	--color-black-input: #f1f3f5;
+	--color-gray-button: #e9ecef;
 	/* Não tá listada, mas aparece como background de alguns botões de modal */
 	--color-background-header-top-figure: #ffffff;
 	--color-background-table-header: #ffffff;
@@ -17,6 +21,7 @@
 	--color-gray-6: #f8f9fa;
 	--color-gray-7: #a1a1a1;
 	--color-background-table: #ffffff;
+	--color-white-title: #ffffff;
 	/* Não tá listado, mas aparece em alguns títulos */
 
 	--color-green: #56cf8e;

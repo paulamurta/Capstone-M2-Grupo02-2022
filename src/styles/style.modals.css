@@ -38,9 +38,8 @@ textarea {
 	max-width: 502px;
 	max-height: 520px;
 	margin-top: 3.8rem;
-
 	margin-top: 29px;
-	background-color: var(--color-white);
+	background-color: var(--color-background-modals-table);
 	border-radius: 8px;
 }
 
@@ -71,7 +70,7 @@ textarea {
 
 .modal__button-delete {
 	grid-area: button-delete;
-	background-color: var(--color-gray-4);
+	background-color: var(--color-gray-button);
 	justify-self: center;
 	width: 100%;
 }
@@ -93,7 +92,7 @@ textarea {
 	background-color: var(--color-gray-5);
 	border-radius: 4px;
 }
-.edit-modal__input:focus{
+.edit-modal__input:focus {
 	border: 2px solid var(--color-dark-blue);
 }
 
@@ -330,7 +329,7 @@ textarea {
 .create-modal__content {
 	min-width: 10rem;
 	max-width: 31rem;
-	background-color: var(--color-white);
+	background-color: var(--color-background-modals-table);
 	border-radius: 8px;
 	height: 30rem;
 	margin: 3.8rem auto;
@@ -382,7 +381,7 @@ textarea {
 	border: 2px solid #415af3;
 	border-radius: 4px;
 	height: 2.8rem;
-	color: var(--color-white);
+	color: var(--color-black-input);
 	font-family: var(--font-inter);
 	font-weight: 600;
 	font-size: 1rem;
@@ -422,6 +421,7 @@ textarea {
 .create-modal__span {
 	cursor: pointer;
 	background-color: var(--color-gray-5);
+	color: var(--color-black);
 	border: 2px solid var(--color-gray-5);
 	border-radius: 4px;
 	padding: 0.8rem 1rem;
@@ -599,7 +599,7 @@ textarea {
 	color: var(--color-red-1);
 	padding-top: 10px;
 }
-.input__feedback-errorEdit{
+.input__feedback-errorEdit {
 	color: var(--color-red-1);
 	padding-top: 30px;
 	margin-left: 2.4rem;
