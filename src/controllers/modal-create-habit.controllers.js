@@ -260,6 +260,7 @@ export default class CreateModalHabit {
 					.toLowerCase()
 					.replace("ú", "u");
 			}
+			console.log(data.habit_category);
 			const response = await Api.createHabit(data);
 
 			if (
