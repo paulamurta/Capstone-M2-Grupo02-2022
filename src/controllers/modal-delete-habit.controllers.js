@@ -58,7 +58,7 @@ class DeleteModalHabit {
 		);
 
 		buttonDelete.addEventListener("click", async () => {
-			Api.deleteHabit(id);
+			await Api.deleteHabit(id);
 			ModalRequest.modalSucess("Seu hábito foi deletado");
 
 			modalDiv.classList.add("modal--transition-opacity");
@@ -68,7 +68,7 @@ class DeleteModalHabit {
 
 			setTimeout(() => {
 				modalDiv.remove();
-			}, 1000);
+			}, 1300);
 		});
 
 		const buttonCancel = EditModalHabit.createElementModal(
