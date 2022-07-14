@@ -31,6 +31,7 @@ export default class CreateModalHabit {
 			setTimeout(() => {
 				modalCreate.remove();
 			}, 1000);
+			modalCreate.remove();
 		});
 
 		const formCreate = CreateModalHabit.createElementModal(
