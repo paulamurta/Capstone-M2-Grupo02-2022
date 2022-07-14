@@ -3,7 +3,6 @@
 	--color-dark-blue: #4150d2;
 	--color-light-blue: #d7e4fb;
 	--color-light-blue-2: #a0adf9;
-
 	--color-purple: #9747ff;
 	--color-light-purple: #a0adf9;
 	/* Não tá listada, mas aparece como background de alguns botões de modal */
@@ -36,6 +35,7 @@
 	--color-success-background: #56cf8e96;
 	--color-error-background: #e6444481;
 	--color-light-pink: #ebebeb;
+	-color-body: #ffffff;
 }
 
 body {

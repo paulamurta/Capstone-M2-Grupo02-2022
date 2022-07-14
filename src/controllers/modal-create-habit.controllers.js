@@ -240,31 +240,28 @@ export default class CreateModalHabit {
 		const buttonInsert = document.querySelector(".modal__button");
 		buttonInsert.addEventListener("click", async (event) => {
 			event.preventDefault();
-			const inputErrorTitle = document.querySelector(".input__title");
-			const inputDesError = document.querySelector(".input__description");
 			const formValues = [...event.target.form];
 			const data = {};
-			console.log(formValues);
+
 			formValues.forEach((input) => {
 				if (input.value != "") {
 					data[input.name] = input.value;
 				}
+			});
+			const modalCreate = document.querySelector(".create-modal");
+			const response = await Api.createHabit(data);
+
+			if (data.habit_category !== undefined) {
 				data.habit_category = data.habit_category
 					.toLowerCase()
 					.replace("ú", "u");
-			});
-
-			console.log(data);
-			const modalCreate = document.querySelector(".create-modal");
-			const response = await Api.createHabit(data);
+			}
 
 			if (
 				response.message === "habit_category obrigatório" ||
 				response.message === "habit_title obrigatório" ||
 				response.message === "habit_description obrigatório"
 			) {
-				inputErrorTitle.style.border = "1px solid var(--color-red-1)";
-				inputDesError.style.border = "1px solid var(--color-red-1)";
 				ModalRequest.modalError("Você deve informar todos os campos");
 			} else {
 				ModalRequest.modalSucess("Seu hábito foi criado");
