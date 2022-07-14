@@ -698,6 +698,10 @@ main {
 	z-index: -1;
 }
 
+.items button {
+	width: 100%;
+}
+
 .dropdown:hover>.items {
 	opacity: 1;
 	visibility: visible;
