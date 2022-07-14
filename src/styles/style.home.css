@@ -68,8 +68,8 @@ body {
 */
 
 .header-top__img {
-	width: 2rem;
-	height: 5vh;
+	width: 28px;
+	height: 28px;
 	border-radius: 50%;
 	border: 2px solid var(--color-blue);
 }
@@ -114,8 +114,8 @@ body {
 */
 
 .header-bottom__img {
-	width: 3.5rem;
-	height: 9vh;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
 	border: 2px solid var(--color-white);
 	/* margin-right: 6vw; */
@@ -193,7 +193,11 @@ main {
 
 .habits {
 	width: 100vw;
+
+	margin-bottom: 5vh;
+
 	background-color: var(--color-background-table);
+
 }
 
 .habits__header {
@@ -240,9 +244,6 @@ main {
 	padding: 0 5vw;
 }
 
-.habits__checkbox:checked {
-}
-
 .habits__body {
 	display: flex;
 	flex-direction: column;
@@ -267,9 +268,35 @@ main {
 	padding: 0 5vw;
 }
 
-.habits__checkbox input {
-	/* descobre como manipula input*/
-	background-color: blueviolet;
+.checkbox-checked {
+	background-color: #56CF8E;
+	border: 1px solid #56CF8E;
+	height: 8px;
+	width: 8px;
+	border-radius: 3px;
+}
+
+.checkbox-checked:after {
+	display: block;
+	position: relative;
+	top: -7.5px;
+	left: -2.5px;
+	width: 6px;
+	height: 12px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	content: "";
+}
+
+.checkbox-not-checked {
+	background-color: white;
+	border: 1px solid #ADB5BD;
+	height: 8px;
+	width: 8px;
+	border-radius: 3px;
 }
 
 .habits__title {
@@ -348,10 +375,12 @@ main {
 	border-radius: 5px;
 	padding: 8px 20px;
 	margin-bottom: 5vh;
-	margin-top: 5vh;
 }
 
-@media (min-width: 1024px) {
+/* telas de desktop grandes */
+
+@media (min-width: 1600px) {
+
 	.header {
 		margin-bottom: 3vh;
 	}
@@ -359,6 +388,20 @@ main {
 	.header__top {
 		max-width: 988px;
 		padding: 2vh 2vw;
+	}
+
+	.header-top__img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.header__bottom {
+		padding-left: 20%
+	}
+
+	.header-bottom__img {
+		width: 60px;
+		height: 60px;
 	}
 
 	main {
@@ -370,6 +413,7 @@ main {
 		width: 100%;
 		flex-direction: row;
 		align-items: center;
+		margin-bottom: 3vh;
 	}
 
 	.filters h3 {
@@ -393,6 +437,7 @@ main {
 
 	.habits {
 		width: 988px;
+		border: 1px solid var(--color-gray-3);
 	}
 
 	.habits__header {
@@ -435,7 +480,172 @@ main {
 		padding: 0 0 0 2vw;
 	}
 
-	.habits__checkbox:checked {
+	.habits__body {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.habits__body__line {
+		width: 100%;
+		justify-content: flex-start;
+		padding: 1vh 2vw 1vh 2vw;
+	}
+
+	.habits__checkbox {
+		padding: 0 2vw 0 0;
+	}
+
+
+	.habits__title {
+		flex: 5;
+		padding: 0;
+	}
+
+	.habits__title span {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 230px;
+	}
+
+	.habits__description {
+		flex: 4;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding: 0;
+	}
+
+	.habits__description p {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 230px;
+	}
+
+	.habits__category {
+		flex: 2;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0;
+	}
+
+	.habits__category span {
+		width: auto;
+		height: auto;
+		padding: 0.7vh;
+	}
+
+	.button__edit__habit {
+		padding: 0 0 0 2vw;
+	}
+
+	.header__bottom main {
+		flex-direction: row;
+		gap: 23px;
+		padding: 0;
+		width: fit-content;
+		margin-left: 15px;
+		align-items: center;
+	}
+}
+
+/* telas de desktop médias */
+@media (min-width: 1024px) and (max-width: 1599px) {
+	.header {
+		margin-bottom: 3vh;
+	}
+
+	.header__top {
+		max-width: 988px;
+		padding: 2vh 2vw;
+	}
+
+	.header-top__img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.header-bottom__img {
+		width: 60px;
+		height: 60px;
+	}
+
+	main {
+		width: 988px;
+		align-items: center;
+	}
+
+	.filters {
+		width: 100%;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 3vh;
+	}
+
+	.filters h3 {
+		margin: 0;
+		padding-left: 0;
+	}
+
+	.containerButtons {
+		justify-content: flex-end;
+		padding: 0;
+		gap: 2vw;
+	}
+
+	.button {
+		padding: 6px 18px;
+	}
+
+	.button__add {
+		padding: 6px 18px;
+	}
+
+	.habits {
+		width: 988px;
+		border: 1px solid var(--color-gray-3);
+	}
+
+	.habits__header {
+		width: 100%;
+		padding: 2vh 2vw 2vh 2vw;
+	}
+
+	.header__category__status {
+		text-align: center;
+		padding: 0 2vw 0 0;
+	}
+
+	.header__category__title {
+		flex: 5;
+		padding: 0;
+	}
+
+	.header__category__description {
+		display: block;
+		flex: 4;
+		text-align: left;
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--color-gray-7);
+		padding: 0;
+	}
+
+	.header__category__category {
+		display: block;
+		flex: 2;
+		text-align: left;
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--color-gray-7);
+		padding: 0;
+	}
+
+	.header__category__edit {
+		text-align: center;
+		padding: 0 0 0 2vw;
 	}
 
 	.habits__body {
@@ -453,10 +663,6 @@ main {
 		padding: 0 2vw 0 0;
 	}
 
-	.habits__checkbox input {
-		/* descobre como manipula input*/
-		background-color: blueviolet;
-	}
 
 	.habits__title {
 		flex: 5;
@@ -513,7 +719,20 @@ main {
 	align-items: center;
 }
 
+
+/* telas de tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
+
+	.header-top__img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.header-bottom__img {
+		width: 60px;
+		height: 60px;
+	}
+
 	.filters {
 		padding: 2vw;
 		flex-direction: row;
@@ -538,6 +757,11 @@ main {
 	.button__add {
 		padding: 6px 18px;
 	}
+
+	.habits {
+		border: 1px solid var(--color-gray-3);
+	}
+
 
 	.habits__header {
 		width: 100%;
@@ -577,9 +801,6 @@ main {
 	.header__category__edit {
 		text-align: center;
 		padding: 0 0 0 2vw;
-	}
-
-	.habits__checkbox:checked {
 	}
 
 	.habits__checkbox {
@@ -699,7 +920,7 @@ main {
 	z-index: -1;
 }
 
-.dropdown:hover > .items {
+.dropdown:hover>.items {
 	opacity: 1;
 	visibility: visible;
 	height: unset;
@@ -713,6 +934,7 @@ main {
 /* Fim dropdown */
 
 @media screen and (min-width: 750px) {
+
 	/* 	Início dropdown */
 	.dropdown ul {
 		list-style: none;
@@ -782,7 +1004,7 @@ main {
 		z-index: -1;
 	}
 
-	.dropdown:hover > .items {
+	.dropdown:hover>.items {
 		opacity: 1;
 		visibility: visible;
 		height: unset;

@@ -31,13 +31,22 @@ export default class TableHabit {
 			checkbox.type = "checkbox";
 			if (habit[i].habit_status == true) {
 				checkbox.checked = true;
+				checkbox.removeAttribute('class')
+				checkbox.classList.add('checkbox-checked')
+				checkbox.style.appearance = 'none'
 				checkbox.disabled = "true";
+				
 			}
-			checkbox.classList.add("habits__checkbox");
+			else {
+				checkbox.removeAttribute('class')
+				checkbox.classList.add('checkbox-not-checked')
+				checkbox.style.appearance = 'none'
+			}
 
 			checkbox.addEventListener("click", async () => {
 				if (checkbox.checked == true) {
 					await Api.completeHabit(habit[i].habit_id);
+
 					const habits = await Api.readAllHabits();
 					TableHabit.listHabit(habits);
 					// window.location.reload(true);
