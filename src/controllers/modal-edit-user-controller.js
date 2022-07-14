@@ -1,6 +1,7 @@
 import CreateModalHabit from "./modal-create-habit.controllers.js";
 import Api from "./api.controllers.js";
 import User from "../models/user.js";
+import ModalRequest from "./modal-requests.controllers.js";
 
 export default class EditModalUser {
 	static createModal() {
@@ -66,6 +67,12 @@ export default class EditModalUser {
 		inputImageForm.placeholder = " URL da Imagem";
 		inputImageForm.name = "usr_image";
 
+		const errorMessage = CreateModalHabit.createElementModal(
+			"p",
+			"error-message", 
+			"Campo Inválido"
+		);
+
 		const btnSaveEdit = CreateModalHabit.createElementModal(
 			"button",
 			"editUser__button",
@@ -80,6 +87,7 @@ export default class EditModalUser {
 			inputUserForm,
 			labelImageForm,
 			inputImageForm,
+			errorMessage,
 			btnSaveEdit
 		);
 		contentEditUser.append(formEditUser);
@@ -103,6 +111,9 @@ export default class EditModalUser {
 		formEditUser.addEventListener("submit", async (event) => {
 			event.preventDefault();
 
+			const inputImage = document.querySelector(".input__image")
+			const error = document.querySelector(".error-mesage")
+
 			const formValue = [...event.target];
 			const data = {
 				usr_image: formValue[1].value,
@@ -114,8 +125,18 @@ export default class EditModalUser {
 				response.usr_image
 			);
 
-			localStorage.setItem("@habits-kenzie:user", JSON.stringify(infoUser));
-			window.location.reload(true);
+			if(infoUser.usr_image === ""){
+				ModalRequest.modalError("Você deve selecionar a imagem");
+				inputImage.style.border = "1px solid var(--color-red-1)";
+				error.style.display = "contents"
+			}
+			else{
+				localStorage.setItem("@habits-kenzie:user", JSON.stringify(infoUser));
+				ModalRequest.modalSucess("Sua imagem foi alterada")
+				setTimeout(() => {
+					document.location.reload(true);
+				}, 1200);
+			}
 		});
 	}
 }
