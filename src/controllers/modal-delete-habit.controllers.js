@@ -1,6 +1,7 @@
 import Api from "../controllers/api.controllers.js";
 import EditModalHabit from "./modal-edit-habit.controllers.js";
 import ModalRequest from "./modal-requests.controllers.js";
+import TableHabit from "./table-habits.controllers.js";
 class DeleteModalHabit {
 	static createModal(id) {
 		const body = document.querySelector("body");
@@ -59,10 +60,15 @@ class DeleteModalHabit {
 		buttonDelete.addEventListener("click", async () => {
 			Api.deleteHabit(id);
 			ModalRequest.modalSucess("Seu hábito foi deletado");
+
+			modalDiv.classList.add("modal--transition-opacity");
+			modalContent.classList.add("modal--transition-small");
+			const newData = await Api.readAllHabits();
+			TableHabit.listHabit(newData);
+
 			setTimeout(() => {
-				document.location.reload(true);
-			}, 1200);
-			//deletar na API o post, e listar novamente as tarefas
+				modalDiv.remove();
+			}, 1000);
 		});
 
 		const buttonCancel = EditModalHabit.createElementModal(
