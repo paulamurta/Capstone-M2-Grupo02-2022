@@ -3,11 +3,11 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background-color: var(--color-body);
 }
 
 .animation-screen {
 	animation: expand 1.2s ease forwards;
-	/* transition: all 1.2s ease; */
 }
 
 @keyframes expand {
@@ -20,29 +20,10 @@ body {
 	}
 }
 
-@-webkit-keyframes moveToLeft {
-	0% {}
-
-	100% {
-		-webkit-transform: translateX(-100%);
-	}
-}
-
-@keyframes moveToLeft {
-	0% {}
-
-	100% {
-		-webkit-transform: translateX(-100%);
-		transform: translateX(-100%);
-	}
-}
-
 .transition-on {
 	opacity: 1;
 	pointer-events: all;
 }
-
-.transition-off {}
 
 .header {
 	width: 100vw;
@@ -50,11 +31,6 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-
-	/* max-width: 988px;
-	margin: 0 15px;
-	margin-bottom: 58px;
-	*/
 }
 
 .header__top {
@@ -107,6 +83,17 @@ body {
 	width: 100%;
 	padding-bottom: 4vh;
 	padding-top: 4vh;
+}
+
+.toggleOn,
+.toggleOff {
+	position: relative;
+	left: 150px;
+	cursor: pointer;
+	width: 30px;
+	display: block;
+	height: 25px;
+	float: right;
 }
 
 /*
@@ -197,6 +184,11 @@ main {
 	color: var(--color-gray-6);
 }
 
+.button__filter:focus {
+	background-color: var(--color-blue);
+	color: var(--color-gray-6);
+}
+
 .habits {
 	width: 100vw;
 }
@@ -244,7 +236,8 @@ main {
 	padding: 0 5vw;
 }
 
-.habits__checkbox:checked {}
+.habits__checkbox:checked {
+}
 
 .habits__body {
 	display: flex;
@@ -437,7 +430,8 @@ main {
 		padding: 0 0 0 2vw;
 	}
 
-	.habits__checkbox:checked {}
+	.habits__checkbox:checked {
+	}
 
 	.habits__body {
 		justify-content: center;
@@ -515,7 +509,6 @@ main {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
 	.filters {
 		padding: 2vw;
 		flex-direction: row;
@@ -581,7 +574,8 @@ main {
 		padding: 0 0 0 2vw;
 	}
 
-	.habits__checkbox:checked {}
+	.habits__checkbox:checked {
+	}
 
 	.habits__checkbox {
 		padding: 0 2vw 0 2vw;
@@ -698,7 +692,7 @@ main {
 	z-index: -1;
 }
 
-.dropdown:hover>.items {
+.dropdown:hover > .items {
 	opacity: 1;
 	visibility: visible;
 	height: unset;
@@ -712,7 +706,6 @@ main {
 /* Fim dropdown */
 
 @media screen and (min-width: 750px) {
-
 	/* 	Início dropdown */
 	.dropdown ul {
 		list-style: none;
@@ -784,7 +777,7 @@ main {
 		z-index: -1;
 	}
 
-	.dropdown:hover>.items {
+	.dropdown:hover > .items {
 		opacity: 1;
 		visibility: visible;
 		height: unset;
@@ -804,5 +797,4 @@ main {
 		width: fit-content;
 		margin-left: 15.5%;
 	}
-
 }
