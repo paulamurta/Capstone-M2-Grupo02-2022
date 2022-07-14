@@ -239,7 +239,10 @@ export default class CreateModalHabit {
 	static createNewHabit() {
 		const buttonInsert = document.querySelector(".modal__button");
 		buttonInsert.addEventListener("click", async (event) => {
+
 			event.preventDefault();
+			const inputErrorTitle = document.querySelector(".input__title")
+			const inputDesError = document.querySelector(".input__description")
 			const formValues = [...event.target.form];
 			const data = {};
 
@@ -262,7 +265,10 @@ export default class CreateModalHabit {
 				response.message === "habit_title obrigatório" ||
 				response.message === "habit_description obrigatório"
 			) {
+				inputErrorTitle.style.border = "1px solid var(--color-red-1)"
+				inputDesError.style.border = "1px solid var(--color-red-1)"
 				ModalRequest.modalError("Você deve informar todos os campos");
+
 			} else {
 				ModalRequest.modalSucess("Seu hábito foi criado");
 				const contentCreate = document.querySelector(".create-modal__content");
