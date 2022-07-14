@@ -568,13 +568,13 @@ textarea {
 	transition: 0.4s;
 }
 
-.error-message{
+.error-message {
 	display: none;
-    color: var(--color-red-1);
+	color: var(--color-red-1);
 	font-size: 0.8rem;
 	margin-top: 0.3rem;
 	margin-left: 0.3rem;
-
+}
 
 .create-modal,
 .edit-modal {
@@ -623,5 +623,4 @@ textarea {
 	100% {
 		opacity: 0;
 	}
-
 }
