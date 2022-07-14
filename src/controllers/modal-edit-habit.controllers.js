@@ -27,7 +27,11 @@ class EditModalHabit {
 		modalContent.append(buttonClose);
 
 		buttonClose.addEventListener("click", function (event) {
-			modalDiv.remove();
+			modalDiv.classList.add("modal--transition-opacity");
+			modalContent.classList.add("modal--transition-small");
+			setTimeout(() => {
+				modalDiv.remove();
+			}, 1000);
 		});
 
 		const form = EditModalHabit.createElementModal("form", "edit-modal__form");

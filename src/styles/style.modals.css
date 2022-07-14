@@ -101,6 +101,7 @@ textarea {
 }
 
 .edit-modal__label {
+	color: var(--color-black);
 	padding-bottom: 8px;
 	padding-top: 28px;
 	font-size: 0.875rem;
@@ -344,6 +345,7 @@ textarea {
 }
 .create-modal__label {
 	font-family: var(--font-inter);
+	color: var(--color-black);
 	padding-bottom: 0.5rem;
 	padding-top: 1.75rem;
 	font-size: 0.875rem;
@@ -510,6 +512,7 @@ textarea {
 	border-radius: 8px;
 	height: 22rem;
 	margin: 3.8rem auto;
+	background-color: var(--color-background-modals-table);
 }
 .editUser-modal__title {
 	grid-area: title;
@@ -520,9 +523,11 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	padding: 2rem;
+	background-color: var(--color-background-modals-table);
 }
 .editUser-modal__label {
 	font-family: var(--font-inter);
+	color: var(--color-black);
 	padding-bottom: 0.5rem;
 	padding-top: 1.75rem;
 	font-size: 0.875rem;
@@ -577,11 +582,13 @@ textarea {
 }
 
 .create-modal,
-.edit-modal {
+.edit-modal,
+.editUser-modal {
 	animation: slidein 1s;
 }
 .create-modal__content,
-.edit-modal__content {
+.edit-modal__content,
+.editUser-modal__content {
 	animation: scalebig 1s;
 }
 

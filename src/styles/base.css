@@ -6,7 +6,9 @@
 	--color-purple: #9747ff;
 	--color-light-purple: #a0adf9;
 	/* Não tá listada, mas aparece como background de alguns botões de modal */
-
+	--color-background-header-top-figure: #ffffff;
+	--color-background-table-header: #ffffff;
+	--color-background-modals-table: #ffffff;
 	--color-gray-1: #212529;
 	--color-gray-2: #343a40;
 	--color-gray-3: #adb5bd;
@@ -14,6 +16,7 @@
 	--color-gray-5: #f1f3f5;
 	--color-gray-6: #f8f9fa;
 	--color-gray-7: #a1a1a1;
+	--color-background-table: #ffffff;
 	/* Não tá listado, mas aparece em alguns títulos */
 
 	--color-green: #56cf8e;

@@ -148,6 +148,7 @@ main {
 	font-size: 1.25rem;
 	font-weight: 600;
 	padding-left: 4vw;
+	color: var(--color-black);
 }
 
 .containerButtons {
@@ -171,6 +172,7 @@ main {
 	border-radius: 5px;
 	padding: 6px 16px;
 	font-family: var(--font-inter);
+	color: var(--color-black);
 }
 
 .button:hover {
@@ -191,6 +193,7 @@ main {
 
 .habits {
 	width: 100vw;
+	background-color: var(--color-background-table);
 }
 
 .habits__header {
@@ -201,6 +204,7 @@ main {
 	padding-bottom: 4vh;
 	padding-top: 4vh;
 	border-bottom: 1px solid var(--color-gray-3);
+	background-color: var(--color-background-table-header);
 }
 
 .header__category__status {
@@ -250,6 +254,7 @@ main {
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 1px solid var(--color-gray-3);
+	background-color: var(--color-background-table-header);
 	padding-top: 0.5vh;
 	padding-bottom: 0.5vh;
 }
@@ -643,12 +648,14 @@ main {
 
 .label {
 	cursor: pointer;
-	background: var(--color-white);
+	background-color: var(--color-background-header-top-figure);
 	padding: 0.8rem 1rem;
 	display: block;
 	box-sizing: border-box;
-	transition: all 0.3s;
 	border-radius: 4px;
+}
+.label:hover {
+	transition: all 0.3s;
 }
 
 .items a {
@@ -724,11 +731,9 @@ main {
 
 	.label {
 		cursor: pointer;
-		background: var(--color-white);
 		padding: 0.8rem 1rem;
 		display: block;
 		box-sizing: border-box;
-		transition: all 0.3s;
 		border-radius: 4px;
 	}
 

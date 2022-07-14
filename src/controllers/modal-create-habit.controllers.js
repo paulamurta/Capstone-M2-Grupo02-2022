@@ -26,7 +26,11 @@ export default class CreateModalHabit {
 		contentCreate.append(btnClose);
 
 		btnClose.addEventListener("click", function (event) {
-			modalCreate.remove();
+			modalCreate.classList.add("modal--transition-opacity");
+			contentCreate.classList.add("modal--transition-small");
+			setTimeout(() => {
+				modalCreate.remove();
+			}, 1000);
 		});
 
 		const formCreate = CreateModalHabit.createElementModal(
