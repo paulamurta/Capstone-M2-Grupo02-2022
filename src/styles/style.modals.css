@@ -69,8 +69,10 @@ textarea {
 }
 
 .modal__button-delete {
+	color: var(-color-gray-input);
 	grid-area: button-delete;
-	background-color: var(--color-gray-button);
+	background-color: var(--color-gray-3);
+
 	justify-self: center;
 	width: 100%;
 }
@@ -201,7 +203,6 @@ textarea {
 	min-width: 305px;
 	max-width: 502px;
 	margin-top: 29px;
-	background-color: var(--color-white);
 	border-radius: 8px;
 	padding: 3px 32px;
 	display: grid;
@@ -213,11 +214,12 @@ textarea {
 	max-height: 360px;
 	margin-top: 3.8rem;
 
-	background-color: var(--color-white);
+background-color: var(--color-background-modals-table);
 	border-radius: 8px;
 }
 
 .modal-delete__title {
+	color: var(--color-gray-5);
 	grid-area: titleDelete;
 	font-size: 1.25rem;
 	padding-bottom: 64px;
@@ -230,10 +232,14 @@ textarea {
 	width: 100%;
 	align-self: center;
 	justify-self: center;
+	color: var(--color-gray-5);
+
 }
 
 .modal-delete__text {
 	grid-area: textDelete;
+	color: var(--color-gray-5);
+
 	padding-bottom: 44px;
 }
 
@@ -256,7 +262,7 @@ textarea {
 
 .modal__button-cancel {
 	grid-area: cancel;
-	background-color: var(--color-gray-4);
+	background-color: var(--color-gray-3);
 	color: var(--color-gray-1);
 	font-weight: 600;
 	height: 40px;
@@ -357,7 +363,7 @@ textarea {
 	font-weight: 400;
 	font-size: 1rem;
 	line-height: 1.9rem;
-	color: var(--color-gray-2);
+	color: var(--color-gray-input);
 	padding: 0.5rem;
 }
 .create-modal__input {
@@ -421,7 +427,7 @@ textarea {
 .create-modal__span {
 	cursor: pointer;
 	background-color: var(--color-gray-5);
-	color: var(--color-black);
+	color: var(--color-gray-input)
 	border: 2px solid var(--color-gray-5);
 	border-radius: 4px;
 	padding: 0.8rem 1rem;
@@ -431,7 +437,7 @@ textarea {
 	transition: all 0.3s;
 }
 .create-modal__li {
-	color: var(--color-gray-2);
+	color: var(-color-gray-input);
 	display: flex;
 	align-items: center;
 	padding: 0.5rem 1rem;

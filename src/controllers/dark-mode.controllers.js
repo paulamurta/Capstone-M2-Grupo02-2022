@@ -26,10 +26,13 @@ class DarkMode {
 		"--color-black-input": "#000000",
 		"--color-blue-logo": "#415af3",
 		"--color-gray-button": "#e9ecef",
+		"--color-gray-input": "#343a40",
 	};
 	static darkTheme = {
 		"--color-body": "#0E1011",
 		"--color-blue": "#40484F",
+		"--color-gray-input": "#343a40",
+
 		"--color-blue-logo": "#ffffff",
 		"--color-background-header-top-figure": "#121212",
 		"--color-black-input": "#f1f3f5",
