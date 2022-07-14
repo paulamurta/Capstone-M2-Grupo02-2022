@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../styles/reset.css" />
+		<link rel="stylesheet" href="../styles/base.css" />
+		<link rel="stylesheet" href="../styles/style.home.css" />
+		<link rel="stylesheet" href="../styles/style.modals.css" />
+		<title>KenzieHabit</title>
+	</head>
+	<body class="animation-screen">
+		<div class="transition transition-on transition-off"></div>
+		<header class="header">
+			<div class="header__top">
+				<h1 class="header__logo">KenzieHabit</h1>
+				<div class="toggle">
+					<figure class="toggleOff">
+						<img
+							src="../assets/toggle-off-solid.svg"
+							alt="toggle-off"
+							class="toggleOff"
+						/>
+					</figure>
+				</div>
+				<figure class="header-top__figure">
+					<div class="dropdown">
+						<span class="label"
+							><img src="" alt="Perfil do usuário" class="header-top__img"
+						/></span>
+						<ul class="items">
+							<li>
+								<button class="linkEditUser">
+									<a href="#"
+										><img src="../assets/user.png" alt="" /> Editar perfil</a
+									>
+								</button>
+							</li>
+							<li>
+								<button class="linkLogout" id="logout-button">
+									<a href="#"
+										><img src="../assets/arrow.png" alt="" /> Sair do app</a
+									>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</figure>
+			</div>
+			<div class="header__bottom">
+				<div class="header-bottom__container">
+					<figure class="header-bottom__figure">
+						<img src="" alt="Teste" class="header-bottom__img" />
+					</figure>
+					<h3 class="header__username">Nome teste user</h3>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="filters"></section>
+
+			<table class="habits">
+				<thead>
+					<tr class="habits__header">
+						<th class="header__category__status">Status</th>
+						<th class="header__category__title">Título</th>
+						<th class="header__category__description">Descrição</th>
+						<th class="header__category__category">Categoria</th>
+						<th class="header__category__edit">Editar</th>
+					</tr>
+				</thead>
+				<tbody class="habits__body"></tbody>
+			</table>
+		</main>
+
+		<button class="button__next">Carregar mais</button>
+
+		<script src="../script/home.js" type="module"></script>
+	</body>
+</html>

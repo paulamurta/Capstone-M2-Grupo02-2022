@@ -1,0 +1,646 @@
+/* ! Estilização dos modais */
+input,
+textarea {
+	padding: 10px;
+}
+
+.edit-modal {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.modal__button-close {
+	position: relative;
+	float: right;
+	top: 32px;
+	right: 32px;
+	font-size: 1.25rem;
+	color: var(--color-gray-7);
+	cursor: pointer;
+}
+.modal-edit__button--close {
+	top: 12px;
+}
+@media (min-width: 720px) {
+	.modal-edit__button--close {
+		top: 32px;
+	}
+}
+
+.edit-modal__content {
+	min-width: 305px;
+	max-width: 502px;
+	max-height: 520px;
+	margin-top: 3.8rem;
+	margin-top: 29px;
+	background-color: var(--color-background-modals-table);
+	border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+	.edit-modal__content {
+		width: 100%;
+		max-width: 502px;
+		margin: 3.8rem auto;
+	}
+}
+
+.edit-modal__form {
+	padding: 14px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"title title"
+		"label-name label-name"
+		"input-name input-name"
+		"label-description label-description"
+		"input-description input-description"
+		"label-category label-category"
+		"select-category select-category"
+		"label-status input-status"
+		"button-save button-save"
+		"button-delete button-delete";
+}
+
+.modal__button-delete {
+	grid-area: button-delete;
+	background-color: var(--color-gray-button);
+	justify-self: center;
+	width: 100%;
+}
+.modal__button-delete:hover {
+	background-color: var(--color-gray-5);
+	transition: 0.4s;
+}
+@media (min-width: 768px) {
+	.modal__button-delete {
+		max-width: 191px;
+		width: 191px;
+		margin-top: 25px;
+	}
+}
+
+.edit-modal__input {
+	width: 100%;
+	height: 40px;
+	background-color: var(--color-gray-5);
+	border-radius: 4px;
+}
+.edit-modal__input:focus {
+	border: 2px solid var(--color-dark-blue);
+}
+
+.edit-modal__title {
+	grid-area: title;
+	color: var(--color-gray-1);
+	font-size: 1.25rem;
+}
+
+.edit-modal__label {
+	color: var(--color-black);
+	padding-bottom: 8px;
+	padding-top: 28px;
+	font-size: 0.875rem;
+}
+
+.edit-modal__select {
+	min-width: 277px;
+	height: 40px;
+	background-color: var(--color-gray-5);
+	padding: 8px;
+	text-decoration: none;
+	appearance: none;
+	border-radius: 4px;
+}
+
+.edit-modal__ .label__name {
+	grid-area: label-name;
+}
+
+.input__name {
+	grid-area: input-name;
+}
+
+.label__description {
+	grid-area: label-description;
+}
+
+.input__description {
+	grid-area: input-description;
+	height: 80px;
+}
+
+.label__category {
+	grid-area: label-category;
+}
+
+.select__category {
+	grid-area: select-category;
+}
+
+.label__status {
+	grid-area: label-status;
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 0;
+	padding-top: 25px;
+}
+
+.input__status {
+	grid-area: input-status;
+	justify-self: end;
+	height: 20px;
+	align-self: end;
+}
+
+.edit-modal__input--description {
+	height: 80px;
+}
+
+.edit-modal__check {
+}
+
+.modal__button--edit {
+	font-weight: 600;
+	border-radius: 4px;
+	height: 40px;
+	font-size: 1rem;
+	color: var(--color-gray-1);
+	cursor: pointer;
+}
+
+.button__save-changes {
+	grid-area: button-save;
+	background-color: var(--color-dark-blue);
+	justify-self: center;
+	color: var(--color-gray-5);
+	width: 100%;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+.button__save-changes:hover {
+	background-color: var(--color-light-blue-2);
+	transition: 0.4s;
+}
+
+.button__delete-changes {
+	grid-area: button-delete;
+	background-color: var(--color-gray-4);
+	justify-self: center;
+	width: 100%;
+}
+
+.modal-delete__content {
+	min-width: 305px;
+	max-width: 502px;
+	margin-top: 29px;
+	background-color: var(--color-white);
+	border-radius: 8px;
+	padding: 3px 32px;
+	display: grid;
+	grid-template-areas: "titleDelete titleDelete" "subtitle subtitle" "textDelete textDelete" "delete delete" "cancel cancel";
+}
+
+.modal-delete {
+	width: 305px;
+	max-height: 360px;
+	margin-top: 3.8rem;
+
+	background-color: var(--color-white);
+	border-radius: 8px;
+}
+
+.modal-delete__title {
+	grid-area: titleDelete;
+	font-size: 1.25rem;
+	padding-bottom: 64px;
+}
+
+.modal-delete__subtitle {
+	grid-area: subtitle;
+	font-size: 1.25rem;
+	padding-bottom: 13px;
+	width: 100%;
+	align-self: center;
+	justify-self: center;
+}
+
+.modal-delete__text {
+	grid-area: textDelete;
+	padding-bottom: 44px;
+}
+
+.button__delete-changes {
+	width: 100%;
+	background-color: var(--color-red-1);
+	font-size: 1 rem;
+	color: var(--color-gray-5);
+	font-weight: 600;
+	grid-area: delete;
+	margin-bottom: 14px;
+	height: 40px;
+	border-radius: 8px;
+}
+
+.button__delete-changes:hover {
+	background-color: var(--color-red-3);
+	transition: 0.4s;
+}
+
+.modal__button-cancel {
+	grid-area: cancel;
+	background-color: var(--color-gray-4);
+	color: var(--color-gray-1);
+	font-weight: 600;
+	height: 40px;
+	border-radius: 8px;
+}
+.modal__button-cancel:hover {
+	background-color: var(--color-gray-5);
+}
+@media (min-width: 768px) {
+	.modal-delete {
+		width: 502px;
+		max-height: 330px;
+	}
+	.modal-delete__content {
+		grid-template-areas: "titleDelete titleDelete" "subtitle subtitle" "textDelete textDelete" "cancel delete";
+	}
+	.modal-delete__subtitle {
+		padding-bottom: 16px;
+	}
+	.modal-delete__text {
+		padding-bottom: 74px;
+	}
+	.modal__button-cancel {
+		width: 191px;
+	}
+	.edit-modal__form {
+		padding: 32px;
+		grid-template-areas:
+			"title title"
+			"label-name label-name"
+			"input-name input-name"
+			"label-description label-description"
+			"input-description input-description"
+			"label-category label-category"
+			"select-category select-category"
+			"label-status input-status"
+			"button-delete button-save";
+	}
+	.button__delete-changes {
+		max-width: 234px;
+	}
+	.button__save-changes {
+		max-width: 239px;
+		width: 239px;
+		margin-left: 8px;
+		margin-bottom: 0px;
+	}
+}
+
+/*Estilização Modal Create Habit*/
+.create-modal {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+}
+
+.modal__button-close {
+	position: relative;
+	float: right;
+	top: 32px;
+	right: 32px;
+	color: var(--color-gray-7);
+	cursor: pointer;
+}
+
+.create-modal__content {
+	min-width: 10rem;
+	max-width: 31rem;
+	background-color: var(--color-background-modals-table);
+	border-radius: 8px;
+	height: 30rem;
+	margin: 3.8rem auto;
+}
+
+.create-modal__title {
+	grid-area: title;
+	color: var(--color-gray-1);
+	font-size: 1.25rem;
+}
+.create-modal__form {
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+}
+.create-modal__label {
+	font-family: var(--font-inter);
+	color: var(--color-black);
+	padding-bottom: 0.5rem;
+	padding-top: 1.75rem;
+	font-size: 0.875rem;
+}
+.create-modal__input::placeholder {
+	font-family: var(--font-inter);
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.9rem;
+	color: var(--color-gray-2);
+	padding: 0.5rem;
+}
+.create-modal__input {
+	background-color: var(--color-gray-5);
+	border: 2px solid var(--color-gray-5);
+	border-radius: 4px;
+	height: 2.5rem;
+}
+.create-modal__input:focus {
+	border: 2px solid var(--color-dark-blue);
+}
+.create-modal__input:invalid {
+	border: 2px solid var(--color-red-1);
+}
+
+.input__description {
+	height: 4.5rem;
+}
+.modal__button {
+	background-color: var(--color-blue);
+	border: 2px solid #415af3;
+	border-radius: 4px;
+	height: 2.8rem;
+	color: var(--color-black-input);
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	margin-top: 2rem;
+	transition: 0.4s;
+}
+.modal__button:hover {
+	background-color: var(--color-light-blue-2);
+	border-color: var(--color-light-blue-2);
+	cursor: pointer;
+	color: var(--color-white);
+	transition: 0.4s;
+}
+.create-modal__ul {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+	opacity: 0;
+	visibility: hidden;
+	min-width: 100%;
+	height: 0;
+	position: absolute;
+	top: 48px;
+	transform-origin: top;
+	transform: scaleY(0);
+	transition: transform 0.3s;
+	background-color: var(--color-gray-5);
+}
+.create-modal__ul:hover {
+	background-color: var(--color-gray-5);
+}
+
+.create-modal__div {
+	position: relative;
+}
+.create-modal__span {
+	cursor: pointer;
+	background-color: var(--color-gray-5);
+	color: var(--color-black);
+	border: 2px solid var(--color-gray-5);
+	border-radius: 4px;
+	padding: 0.8rem 1rem;
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	transition: all 0.3s;
+}
+.create-modal__li {
+	color: var(--color-gray-2);
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	transition: all 0.2s;
+	gap: 1rem;
+}
+
+.create-modal__li:hover {
+	background-color: var(--color-light-blue);
+	cursor: pointer;
+}
+.create-modal__ul::before {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	transform: rotate(45deg);
+	top: -7px;
+	left: 20px;
+	z-index: -1;
+}
+.create-modal__div:hover > .create-modal__ul {
+	opacity: 1;
+	visibility: visible;
+	height: unset;
+	transform: scaleY(1);
+}
+
+.create-modal__div:hover > .create-modal__span {
+	background-color: var(--color-light-blue);
+}
+
+@media screen and (max-width: 768px) and (min-width: 500px) {
+	.create-modal__content {
+		max-width: 28rem;
+	}
+}
+@media screen and (max-width: 499px) and (min-width: 465px) {
+	.create-modal__content {
+		max-width: 24rem;
+	}
+}
+@media screen and (max-width: 464px) and (min-width: 360px) {
+	.create-modal__content {
+		max-width: 20.5rem;
+		margin: 3.8rem auto;
+	}
+	.create-modal__form {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 359px) {
+	.create-modal__content {
+		max-width: 19rem;
+		margin: 3.8rem auto;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.create-modal__content {
+		max-width: 18rem;
+		margin: 3.8rem auto;
+	}
+}
+
+/*Estilização Modal Update User*/
+
+.editUser-modal {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+}
+.editUser-modal__content {
+	min-width: 10rem;
+	max-width: 31rem;
+	background-color: var(--color-white);
+	border-radius: 8px;
+	height: 22rem;
+	margin: 3.8rem auto;
+	background-color: var(--color-background-modals-table);
+}
+.editUser-modal__title {
+	grid-area: title;
+	color: var(--color-gray-1);
+	font-size: 1.25rem;
+}
+.editUser-modal__form {
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	background-color: var(--color-background-modals-table);
+}
+.editUser-modal__label {
+	font-family: var(--font-inter);
+	color: var(--color-black);
+	padding-bottom: 0.5rem;
+	padding-top: 1.75rem;
+	font-size: 0.875rem;
+}
+.editUser-modal__input::placeholder {
+	font-family: var(--font-inter);
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.9rem;
+	color: var(--color-gray-2);
+	padding: 0.5rem;
+}
+.editUser-modal__input {
+	background-color: var(--color-gray-5);
+	border: 2px solid var(--color-gray-5);
+	border-radius: 4px;
+	height: 2.5rem;
+}
+.editUser-modal__input:focus {
+	border: 2px solid var(--color-dark-blue);
+}
+.editUser-modal__input:invalid {
+	border: 2px solid var(--color-red-1);
+}
+.editUser__button {
+	background-color: var(--color-light-purple);
+	border: 2px solid var(--color-light-purple);
+	border-radius: 4px;
+	height: 2.8rem;
+	color: var(--color-white);
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	margin-top: 2rem;
+	transition: 0.4s;
+}
+.editUser__button:hover {
+	background-color: var(--color-blue);
+	border: 2px solid var(--color-blue);
+	cursor: pointer;
+	color: var(--color-white);
+	transition: 0.4s;
+}
+
+.error-message {
+	display: none;
+	color: var(--color-red-1);
+	font-size: 0.8rem;
+	margin-top: 0.3rem;
+	margin-left: 0.3rem;
+}
+
+.create-modal,
+.edit-modal,
+.editUser-modal {
+	animation: slidein 1s;
+}
+.create-modal__content,
+.edit-modal__content,
+.editUser-modal__content {
+	animation: scalebig 1s;
+}
+
+.input__feedback-error {
+	color: var(--color-red-1);
+	padding-top: 10px;
+}
+.input__feedback-errorEdit {
+	color: var(--color-red-1);
+	padding-top: 30px;
+	margin-left: 2.4rem;
+}
+
+@keyframes scalebig {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.modal--transition-small {
+	animation: scalesmall 2s;
+}
+
+.modal--transition-opacity {
+	animation: opacitydown 2s;
+}
+@keyframes scalesmall {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+
+@keyframes opacitydown {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
