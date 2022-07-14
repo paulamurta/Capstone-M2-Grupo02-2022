@@ -5,7 +5,6 @@ export default class TableHabit {
 	static postNumber = 10;
 
 	static async listHabit(habit, filter = "") {
-		console.log(habit)
 		const table = document.querySelector(".habits__body");
 		table.innerHTML = "";
 		let posts = TableHabit.postNumber;
@@ -47,8 +46,10 @@ export default class TableHabit {
 			checkbox.addEventListener("click", async () => {
 				if (checkbox.checked == true) {
 					await Api.completeHabit(habit[i].habit_id);
-					window.location.reload(true);
-					
+
+					const habits = await Api.readAllHabits();
+					TableHabit.listHabit(habits);
+					// window.location.reload(true);
 				} else {
 					titulo.style.textDecoration = "none";
 				}
@@ -73,15 +74,26 @@ export default class TableHabit {
 			const td4 = document.createElement("td");
 			td4.classList.add("habits__category");
 			const category = document.createElement("span");
-			switch(habit[i].habit_category){
-				case 'estudos': category.innerText = 'Estudo'; break;
-				case 'casa': category.innerText = 'Casa'; break;
-				case 'trabalho': category.innerText = 'Trabalho'; break;
-				case 'saude': category.innerText = 'Saúde'; break;
-				case 'lazer': category.innerText = 'Lazer'; break;
-				default: category.innerText = habit[i].habit_category;
+			switch (habit[i].habit_category) {
+				case "estudos":
+					category.innerText = "Estudo";
+					break;
+				case "casa":
+					category.innerText = "Casa";
+					break;
+				case "trabalho":
+					category.innerText = "Trabalho";
+					break;
+				case "saude":
+					category.innerText = "Saúde";
+					break;
+				case "lazer":
+					category.innerText = "Lazer";
+					break;
+				default:
+					category.innerText = habit[i].habit_category;
 			}
-			
+
 			td4.append(category);
 
 			const td5 = document.createElement("tr");
@@ -93,12 +105,14 @@ export default class TableHabit {
 
 			button.addEventListener("click", (event) => {
 				EditModalHabit.createModal(habit[i]);
+				EditModalHabit.modalEditHabitInputFeedback();
 			});
 
 			td5.append(button);
 
 			if (checkbox.checked == true) {
-				tr.style.backgroundColor = "#e9ecef";
+				tr.style.backgroundColor = "var(--color-gray-4)";
+
 				tr.classList.add("line__checked");
 			}
 			tr.append(td1, td2, td3, td4, td5);

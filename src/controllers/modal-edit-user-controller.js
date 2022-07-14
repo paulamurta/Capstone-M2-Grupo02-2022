@@ -27,7 +27,11 @@ export default class EditModalUser {
 		contentEditUser.append(btnClose);
 
 		btnClose.addEventListener("click", function (event) {
-			modalEditUser.remove();
+			modalEditUser.classList.add("modal--transition-opacity");
+			contentEditUser.classList.add("modal--transition-small");
+			setTimeout(() => {
+				modalEditUser.remove();
+			}, 1000);
 		});
 
 		const formEditUser = CreateModalHabit.createElementModal(
@@ -69,7 +73,7 @@ export default class EditModalUser {
 
 		const errorMessage = CreateModalHabit.createElementModal(
 			"p",
-			"error-message", 
+			"error-message",
 			"Campo Inválido"
 		);
 
@@ -111,8 +115,8 @@ export default class EditModalUser {
 		formEditUser.addEventListener("submit", async (event) => {
 			event.preventDefault();
 
-			const inputImage = document.querySelector(".input__image")
-			const error = document.querySelector(".error-mesage")
+			const inputImage = document.querySelector(".input__image");
+			const error = document.querySelector(".error-mesage");
 
 			const formValue = [...event.target];
 			const data = {
@@ -125,17 +129,37 @@ export default class EditModalUser {
 				response.usr_image
 			);
 
-			if(infoUser.usr_image === ""){
+			if (infoUser.usr_image === "") {
 				ModalRequest.modalError("Você deve selecionar a imagem");
 				inputImage.style.border = "1px solid var(--color-red-1)";
-				error.style.display = "contents"
-			}
-			else{
+				error.style.display = "contents";
+			} else {
 				localStorage.setItem("@habits-kenzie:user", JSON.stringify(infoUser));
-				ModalRequest.modalSucess("Sua imagem foi alterada")
+				ModalRequest.modalSucess("Sua imagem foi alterada");
 				setTimeout(() => {
 					document.location.reload(true);
 				}, 1200);
+			}
+		});
+	}
+
+	static modalEditUserInputFeedback() {
+		const inputImage = document.querySelector(".input__image");
+		const btnEdit = document.querySelector(".editUser__button")
+		const spanImage = document.createElement("span");
+
+		spanImage.classList.add("input__feedback-error");
+		spanImage.innerText = "Você deve informar a imagem";
+		inputImage.insertAdjacentElement("afterend", spanImage);
+		spanImage.style.display = "none";
+
+		btnEdit.addEventListener("click", (event) => {
+			if (inputImage.value === "") {
+				spanImage.style.display = "block";
+				inputImage.style.borderColor = "var(--color-red-1)";
+			} else {
+				spanImage.style.display = "none";
+				inputImage.style.borderColor = "var(--color-gray-5)";
 			}
 		});
 	}
