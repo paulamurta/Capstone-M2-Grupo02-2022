@@ -195,6 +195,11 @@ main {
 	color: var(--color-gray-6);
 }
 
+.button__filter:focus{
+	background-color: var(--color-blue);
+	color: var(--color-gray-6);
+}
+
 .habits {
 	width: 100vw;
 }

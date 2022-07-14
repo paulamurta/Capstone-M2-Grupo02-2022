@@ -1,12 +1,11 @@
 import Api from "./api.controllers.js";
 import EditModalHabit from "./modal-edit-habit.controllers.js";
 
-// localStorage.setItem("@habits-kenzie:number-post")
-
 export default class TableHabit {
 	static postNumber = 10;
 
 	static async listHabit(habit, filter = "") {
+		console.log(habit)
 		const table = document.querySelector(".habits__body");
 		table.innerHTML = "";
 		let posts = TableHabit.postNumber;
@@ -43,7 +42,6 @@ export default class TableHabit {
 					window.location.reload(true);
 				} else {
 					titulo.style.textDecoration = "none";
-					// abro o modal de editar?
 				}
 			});
 			td1.append(checkbox);
@@ -70,12 +68,10 @@ export default class TableHabit {
 			td4.append(category);
 
 			const td5 = document.createElement("tr");
-			//td5.classList.add("button");
 			td5.classList.add("button__edit__habit");
 
 			const button = document.createElement("button");
 			button.innerText = "...";
-			// button.classList.add("button");
 			button.classList.add("button__editHabit");
 
 			button.addEventListener("click", (event) => {
