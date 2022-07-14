@@ -14,21 +14,23 @@ body {
 	0% {
 		transform: translateY(1400px);
 	}
+
 	100% {
 		transform: translateY(0px);
 	}
 }
 
 @-webkit-keyframes moveToLeft {
-	0% {
-	}
+	0% {}
+
 	100% {
 		-webkit-transform: translateX(-100%);
 	}
 }
+
 @keyframes moveToLeft {
-	0% {
-	}
+	0% {}
+
 	100% {
 		-webkit-transform: translateX(-100%);
 		transform: translateX(-100%);
@@ -39,8 +41,8 @@ body {
 	opacity: 1;
 	pointer-events: all;
 }
-.transition-off {
-}
+
+.transition-off {}
 
 .header {
 	width: 100vw;
@@ -99,7 +101,7 @@ body {
 .header__bottom {
 	/* height: 125px; */
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	background-color: var(--color-blue);
 	width: 100%;
@@ -129,7 +131,7 @@ body {
 	height: 9vh;
 	border-radius: 50%;
 	border: 2px solid var(--color-white);
-	margin-right: 6vw;
+	/* margin-right: 6vw; */
 }
 
 .header__username {
@@ -195,11 +197,6 @@ main {
 	color: var(--color-gray-6);
 }
 
-.button__filter:focus{
-	background-color: var(--color-blue);
-	color: var(--color-gray-6);
-}
-
 .habits {
 	width: 100vw;
 }
@@ -247,8 +244,7 @@ main {
 	padding: 0 5vw;
 }
 
-.habits__checkbox:checked {
-}
+.habits__checkbox:checked {}
 
 .habits__body {
 	display: flex;
@@ -441,8 +437,7 @@ main {
 		padding: 0 0 0 2vw;
 	}
 
-	.habits__checkbox:checked {
-	}
+	.habits__checkbox:checked {}
 
 	.habits__body {
 		justify-content: center;
@@ -510,7 +505,16 @@ main {
 	}
 }
 
+.header__bottom main {
+	flex-direction: row;
+	gap: 23px;
+	padding: 0;
+	width: fit-content;
+	margin-left: 15px;
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
+
 	.filters {
 		padding: 2vw;
 		flex-direction: row;
@@ -576,8 +580,7 @@ main {
 		padding: 0 0 0 2vw;
 	}
 
-	.habits__checkbox:checked {
-	}
+	.habits__checkbox:checked {}
 
 	.habits__checkbox {
 		padding: 0 2vw 0 2vw;
@@ -694,7 +697,7 @@ main {
 	z-index: -1;
 }
 
-.dropdown:hover > .items {
+.dropdown:hover>.items {
 	opacity: 1;
 	visibility: visible;
 	height: unset;
@@ -704,9 +707,11 @@ main {
 .items li img {
 	margin-right: 1rem;
 }
+
 /* Fim dropdown */
 
 @media screen and (min-width: 750px) {
+
 	/* 	Início dropdown */
 	.dropdown ul {
 		list-style: none;
@@ -778,7 +783,7 @@ main {
 		z-index: -1;
 	}
 
-	.dropdown:hover > .items {
+	.dropdown:hover>.items {
 		opacity: 1;
 		visibility: visible;
 		height: unset;
@@ -790,4 +795,13 @@ main {
 	}
 
 	/* Fim dropdown */
+
+	.header__bottom main {
+		flex-direction: row;
+		gap: 23px;
+		padding: 0;
+		width: fit-content;
+		margin-left: 15.5%;
+	}
+
 }
