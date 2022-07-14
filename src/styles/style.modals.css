@@ -93,6 +93,9 @@ textarea {
 	background-color: var(--color-gray-5);
 	border-radius: 4px;
 }
+.edit-modal__input:focus{
+	border: 2px solid var(--color-dark-blue);
+}
 
 .edit-modal__title {
 	grid-area: title;
@@ -595,6 +598,11 @@ textarea {
 .input__feedback-error {
 	color: var(--color-red-1);
 	padding-top: 10px;
+}
+.input__feedback-errorEdit{
+	color: var(--color-red-1);
+	padding-top: 30px;
+	margin-left: 2.4rem;
 }
 
 @keyframes scalebig {
