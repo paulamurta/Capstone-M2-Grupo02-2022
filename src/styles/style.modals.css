@@ -585,6 +585,11 @@ textarea {
 	animation: scalebig 1s;
 }
 
+.input__feedback-error {
+	color: var(--color-red-1);
+	padding-top: 10px;
+}
+
 @keyframes scalebig {
 	0% {
 		opacity: 0;

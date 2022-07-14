@@ -51,6 +51,7 @@ export default class FilterHabits {
 
 		buttonAdd.addEventListener("click", () => {
 			CreateModalHabit.createModal();
+			CreateModalHabit.modalCreatInputFeedback();
 		});
 
 		divButtons.append(buttonAll, buttonCompleted, buttonAdd);
