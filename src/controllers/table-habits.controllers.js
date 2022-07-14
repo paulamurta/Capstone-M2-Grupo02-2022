@@ -64,7 +64,15 @@ export default class TableHabit {
 			const td4 = document.createElement("td");
 			td4.classList.add("habits__category");
 			const category = document.createElement("span");
-			category.innerText = habit[i].habit_category;
+			switch(habit[i].habit_category){
+				case 'estudos': category.innerText = 'Estudo'; break;
+				case 'casa': category.innerText = 'Casa'; break;
+				case 'trabalho': category.innerText = 'Trabalho'; break;
+				case 'saude': category.innerText = 'Saúde'; break;
+				case 'lazer': category.innerText = 'Lazer'; break;
+				default: category.innerText = habit[i].habit_category;
+			}
+			
 			td4.append(category);
 
 			const td5 = document.createElement("tr");
