@@ -38,11 +38,16 @@
 	--color-light-pink: #ebebeb;
 }
 
+body {
+	z-index: 0;
+}
+
 .modal {
 	display: flex;
 	align-items: center;
 	gap: 15px;
 	width: fit-content;
+	max-width: 500px;
 	min-width: 290px;
 	height: 120px;
 	border: 1px solid black;
@@ -54,6 +59,7 @@
 	color: var(--color-gray-1);
 	transition: all 1s ease-in-out;
 	opacity: 0;
+	z-index: 1;
 }
 
 .modal-sucess {
